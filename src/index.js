@@ -7,6 +7,7 @@ import rootReducer from '../src/reducer';
 import DragNDrop from './components/GamesContainer';
 import GameComp from './components/Games/TakeABreak';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import WrapperComponent from './components/WrapperComponent';
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk))); 
 ReactDOM.render(
@@ -16,6 +17,7 @@ ReactDOM.render(
           <Switch>
           <Route exact path="/" component={DragNDrop} />
           <Route path="/game" component={GameComp} />
+          <Route path="/wrap" component={WrapperComponent} />
           </Switch>  
         </div>
     </Router>
