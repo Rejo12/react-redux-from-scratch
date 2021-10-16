@@ -22,11 +22,16 @@ module.exports = {
       }
     ]
   },
+  optimization:{
+    splitChunks:{
+      chunks:'all'
+    }
+  },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",
-    filename: "bundle.js"
+    filename: "[name].bundle.js"
   },
   devServer: {
     contentBase: path.join(__dirname, "public/"),
