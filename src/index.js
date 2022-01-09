@@ -8,7 +8,10 @@ import DragNDrop from './components/GamesContainer';
 import GameComp from './components/Games/TakeABreak';
 import WrapperComponent from './components/WrapperComponent';
 import CustomHooks from './components/CustomHooks';
+import Index from './components/Index';
+import AppLayout from './components/AppLayout';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import "../src/index.css"
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -20,14 +23,18 @@ ReactDOM.render(
     <Provider store={store}>
     <Router>
         <div>
+          <AppLayout/>
+          <div className="appBodyCSS">
           <Switch>
            {/* <Suspense fallback={<div>Loading Page ....</div>} > */}
-          <Route exact path="/" component={DragNDrop} />
+          <Route exact path="/" component={Index} />
+          <Route exact path="/dragndrop" component={DragNDrop} />
           <Route path="/game" component={GameComp} />
           <Route path="/wrap" component={WrapperComponent} />
           <Route path="/hooks" component={CustomHooks} />
           {/* </Suspense> */}
           </Switch>  
+          </div>
         </div>
     </Router>
     </Provider>, 
