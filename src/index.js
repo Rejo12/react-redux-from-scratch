@@ -13,6 +13,7 @@ import AppLayout from './components/AppLayout';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import "../src/index.css"
 import StateHooks from './components/Hooks/UseState';
+import ReducerHook from './components/Hooks/UseReducer';
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -34,6 +35,7 @@ ReactDOM.render(
           <Route path="/wrap" component={WrapperComponent} />
           <Route path="/hooks" component={CustomHooks} />
           <Route path="/useState" component={StateHooks} />
+          <Route path="/useReducer" component={ReducerHook} />
           {/* </Suspense> */}
           </Switch>  
           </div>
