@@ -16,6 +16,7 @@ import StateHooks from './components/Hooks/UseState';
 import ReducerHook from './components/Hooks/UseReducer';
 import EffectHook from './components/Hooks/UseEffect';
 import RefHook from './components/Hooks/UseRef';
+import LayoutEffectHook from './components/Hooks/UseLayoutEffect';
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -40,6 +41,7 @@ ReactDOM.render(
           <Route path="/useReducer" component={ReducerHook} />
           <Route path="/useEffect" component={EffectHook} />
           <Route path="/useRef" component={RefHook} />
+          <Route path="/useLayoutEffect" component={LayoutEffectHook} />
           {/* </Suspense> */}
           </Switch>  
           </div>
