@@ -52,7 +52,10 @@ const Index=({history})=>{
                          <a className="hoverClass" onClick={e=>changeRoute('/useRef')}> UseRef </a>
                          </li>
                          <li>
-                         <a className="hoverClass" onClick={e=>changeRoute('/useLayoutEffect')}> useLayoutEffect </a>
+                         <a className="hoverClass" onClick={e=>changeRoute('/useLayoutEffect')}> UseLayoutEffect </a>
+                         </li>
+                         <li>
+                         <a className="hoverClass" onClick={e=>changeRoute('/useImperativeHandle')}> UseImperativeHandle </a>
                          </li>
                         </ul>
                     </li>
