@@ -60,6 +60,9 @@ const Index=({history})=>{
                          <li>
                          <a className="hoverClass" onClick={e=>changeRoute('/useContext')}> UseContext </a>
                          </li>
+                         <li>
+                         <a className="hoverClass" onClick={e=>changeRoute('/useMemo')}> Memo </a>
+                         </li>
                         </ul>
                     </li>
                   </ul>
