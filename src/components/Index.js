@@ -61,7 +61,10 @@ const Index=({history})=>{
                          <a className="hoverClass" onClick={e=>changeRoute('/useContext')}> UseContext </a>
                          </li>
                          <li>
-                         <a className="hoverClass" onClick={e=>changeRoute('/useMemo')}> Memo </a>
+                         <a className="hoverClass" onClick={e=>changeRoute('/useMemo')}> UseMemo </a>
+                         </li>
+                         <li>
+                         <a className="hoverClass" onClick={e=>changeRoute('/useCallBack')}> UseCallBack </a>
                          </li>
                         </ul>
                     </li>

@@ -20,6 +20,7 @@ import LayoutEffectHook from './components/Hooks/UseLayoutEffect';
 import ImperativeHandleHook from './components/Hooks/UseImperativeHandleEffect';
 import ContextProvider from './components/Hooks/ContextHook/ContextProvider';
 import MemoHook from './components/Hooks/UseMemo';
+import CallBackHook from './components/Hooks/UseCallBack Hook/UseCallBack';
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -48,6 +49,7 @@ ReactDOM.render(
           <Route path="/useImperativeHandle" component={ImperativeHandleHook} />
           <Route path="/useContext" component={ContextProvider} />
           <Route path="/useMemo" component={MemoHook} />
+          <Route path="/useCallBack" component={CallBackHook} />
           {/* </Suspense> */}
           </Switch>  
           </div>
