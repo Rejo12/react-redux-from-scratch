@@ -24,6 +24,7 @@ import CallBackHook from "./components/Hooks/UseCallBack Hook/UseCallBack";
 import StyledApp from "./components/StyledComponent/App";
 import Counter from "./components/Counter";
 import ParentComp from "./components/Interview/ParentComp";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -32,9 +33,9 @@ import ParentComp from "./components/Interview/ParentComp";
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <div>
+  <ErrorBoundary>
+    <Provider store={store}>
+      <Router>
         <AppLayout />
         <div className="appBodyCSS">
           <Switch>
@@ -62,8 +63,8 @@ ReactDOM.render(
             {/* </Suspense> */}
           </Switch>
         </div>
-      </div>
-    </Router>
-  </Provider>,
+      </Router>
+    </Provider>
+  </ErrorBoundary>,
   document.getElementById("root")
 );
