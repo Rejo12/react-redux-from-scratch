@@ -23,6 +23,7 @@ import MemoHook from "./components/Hooks/UseMemo";
 import CallBackHook from "./components/Hooks/UseCallBack Hook/UseCallBack";
 import StyledApp from "./components/StyledComponent/App";
 import Counter from "./components/Counter";
+import ParentComp from "./components/Interview/ParentComp";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -57,6 +58,7 @@ ReactDOM.render(
             <Route path="/useCallBack" component={CallBackHook} />
             <Route path="/styled" component={StyledApp} />
             <Route path="/counter" component={Counter} />
+            <Route path="/interview" component={ParentComp} />
             {/* </Suspense> */}
           </Switch>
         </div>

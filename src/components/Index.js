@@ -149,6 +149,14 @@ const Index = ({ history }) => {
                 Counter
               </a>
             </li>
+            <li>
+              <a
+                className="hoverClass"
+                onClick={(e) => changeRoute("/interview")}
+              >
+                Interview
+              </a>
+            </li>
           </ul>
         </section>
       </div>
