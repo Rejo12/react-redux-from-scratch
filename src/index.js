@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
 import rootReducer from "../src/reducer";
 import DragNDrop from "./components/GamesContainer";
 import GameComp from "./components/Games/TakeABreak";
@@ -25,13 +26,22 @@ import StyledApp from "./components/StyledComponent/App";
 import Counter from "./components/Counter";
 import ParentComp from "./components/Interview/ParentComp";
 import ErrorBoundary from "./components/ErrorBoundary";
+import rootSaga from "./Saga/rootSaga";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
 // const WrapperComponent = lazy(()=>import('./components/WrapperComponent'))
 // const GameComp = lazy(()=>import('./components/Games/TakeABreak'))
 
-const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
+// Comment out initializing sagaMiddleware and sagaMiddleware.run(rootSaga);
+// and pass thunk to  applyMiddleware in case want to use thunk
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(
+  rootReducer,
+  compose(applyMiddleware(sagaMiddleware))
+);
+sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <ErrorBoundary>
     <Provider store={store}>

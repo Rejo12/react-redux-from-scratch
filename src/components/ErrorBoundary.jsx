@@ -4,6 +4,11 @@ import styled from "styled-components";
 const Container = styled.div`
   height: 100vh;
   padding: 5rem 3rem;
+  background: url("./bg1.jpg");
+
+  &::before {
+    content: "";
+  }
 `;
 
 export default class ErrorBoundary extends React.Component {
@@ -25,7 +30,7 @@ export default class ErrorBoundary extends React.Component {
   }
 
   render() {
-    console.log(this.state.hasError, this.state.error);
+    // console.log(this.state.hasError, this.state.error);
     if (this.state.hasError) {
       return (
         <Container>

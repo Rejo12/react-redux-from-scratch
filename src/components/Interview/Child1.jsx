@@ -5,17 +5,17 @@ export default class Child1 extends React.Component {
   state = {
     data: [],
   };
-  componentDidMount() {
-    const response = axios.get("https://jsonplaceholder.typicode.com/users");
-    response.then((val) => {
-      console.log("val", val);
-      this.setState({
-        data: val.data,
-      });
-    });
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.interviewData.length !== state.data.length) {
+      return { data: props.interviewData };
+    }
+    return null;
   }
+
   render() {
     const { data } = this.state;
+    // console.log("data", data, this.props.interviewData);
     return (
       <>
         <table>

@@ -5,7 +5,6 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action = {}) {
-  console.log("reducer");
   switch (action.type) {
     case "SET_DATA_FROM_DRAG":
       console.log("reducer", action.data);
