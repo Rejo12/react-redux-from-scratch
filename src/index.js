@@ -39,42 +39,44 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   rootReducer,
-  compose(applyMiddleware(sagaMiddleware))
+  compose(applyMiddleware(sagaMiddleware, thunk))
 );
 sagaMiddleware.run(rootSaga);
 ReactDOM.render(
-  <ErrorBoundary>
-    <Provider store={store}>
-      <Router>
+  <Provider store={store}>
+    <Router>
+      <div style={{ position: "relative" }}>
         <AppLayout />
-        <div className="appBodyCSS">
-          <Switch>
-            {/* <Suspense fallback={<div>Loading Page ....</div>} > */}
-            <Route exact path="/" component={Index} />
-            <Route exact path="/dragndrop" component={DragNDrop} />
-            <Route path="/game" component={GameComp} />
-            <Route path="/wrap" component={WrapperComponent} />
-            <Route path="/hooks" component={CustomHooks} />
-            <Route path="/useState" component={StateHooks} />
-            <Route path="/useReducer" component={ReducerHook} />
-            <Route path="/useEffect" component={EffectHook} />
-            <Route path="/useRef" component={RefHook} />
-            <Route path="/useLayoutEffect" component={LayoutEffectHook} />
-            <Route
-              path="/useImperativeHandle"
-              component={ImperativeHandleHook}
-            />
-            <Route path="/useContext" component={ContextProvider} />
-            <Route path="/useMemo" component={MemoHook} />
-            <Route path="/useCallBack" component={CallBackHook} />
-            <Route path="/styled" component={StyledApp} />
-            <Route path="/counter" component={Counter} />
-            <Route path="/interview" component={ParentComp} />
-            {/* </Suspense> */}
-          </Switch>
-        </div>
-      </Router>
-    </Provider>
-  </ErrorBoundary>,
+        <ErrorBoundary>
+          <div className="appBodyCSS">
+            <Switch>
+              {/* <Suspense fallback={<div>Loading Page ....</div>} > */}
+              <Route exact path="/" component={Index} />
+              <Route exact path="/dragndrop" component={DragNDrop} />
+              <Route path="/game" component={GameComp} />
+              <Route path="/wrap" component={WrapperComponent} />
+              <Route path="/hooks" component={CustomHooks} />
+              <Route path="/useState" component={StateHooks} />
+              <Route path="/useReducer" component={ReducerHook} />
+              <Route path="/useEffect" component={EffectHook} />
+              <Route path="/useRef" component={RefHook} />
+              <Route path="/useLayoutEffect" component={LayoutEffectHook} />
+              <Route
+                path="/useImperativeHandle"
+                component={ImperativeHandleHook}
+              />
+              <Route path="/useContext" component={ContextProvider} />
+              <Route path="/useMemo" component={MemoHook} />
+              <Route path="/useCallBack" component={CallBackHook} />
+              <Route path="/styled" component={StyledApp} />
+              <Route path="/counter" component={Counter} />
+              <Route path="/interview" component={ParentComp} />
+              {/* </Suspense> */}
+            </Switch>
+          </div>
+        </ErrorBoundary>
+      </div>
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
