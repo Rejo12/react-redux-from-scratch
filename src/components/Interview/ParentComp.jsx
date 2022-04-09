@@ -11,7 +11,22 @@ class ParentComp extends React.Component {
   componentDidMount() {
     this.props.fetchInterviewData();
   }
-  saveData = (item) => {
+
+  customPromise(time, type) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("promise log");
+        resolve(type);
+      }, time);
+    });
+  }
+  saveData = async (item) => {
+    const p1 = await this.customPromise(2000, "2000");
+    console.log("1st log");
+    const p2 = await this.customPromise(5000, "5000");
+    console.log("2nd log");
+    console.log("3rd log");
+
     this.setState({
       selectedData: item,
     });

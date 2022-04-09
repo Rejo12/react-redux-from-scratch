@@ -150,12 +150,25 @@ const Index = ({ history }) => {
               </a>
             </li>
             <li>
-              <a
-                className="hoverClass"
-                onClick={(e) => changeRoute("/interview")}
-              >
-                Interview
-              </a>
+              Interview
+              <ul>
+                <li>
+                  <a
+                    className="hoverClass"
+                    onClick={(e) => changeRoute("/interview-xc")}
+                  >
+                    XC
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="hoverClass"
+                    onClick={(e) => changeRoute("/interview-inventiv")}
+                  >
+                    Inventiv-5/4/22
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </section>

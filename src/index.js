@@ -25,6 +25,7 @@ import CallBackHook from "./components/Hooks/UseCallBack Hook/UseCallBack";
 import StyledApp from "./components/StyledComponent/App";
 import Counter from "./components/Counter";
 import ParentComp from "./components/Interview/ParentComp";
+import Main from "./components/Interview/Main";
 import ErrorBoundary from "./components/ErrorBoundary";
 import rootSaga from "./Saga/rootSaga";
 
@@ -70,7 +71,8 @@ ReactDOM.render(
               <Route path="/useCallBack" component={CallBackHook} />
               <Route path="/styled" component={StyledApp} />
               <Route path="/counter" component={Counter} />
-              <Route path="/interview" component={ParentComp} />
+              <Route path="/interview-xc" component={ParentComp} />
+              <Route path="/interview-inventiv" component={Main} />
               {/* </Suspense> */}
             </Switch>
           </div>
