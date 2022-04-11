@@ -2,9 +2,9 @@ import { fetchInterviewDataApi } from "../Api/InterviewApi";
 
 /*With Saga */
 export default function fetchInterviewData() {
-  return {
-    type: "FETCH_INTERVIEW_DATA",
-  };
+	return {
+		type: "FETCH_INTERVIEW_DATA",
+	};
 }
 
 /*With thunk */
@@ -24,8 +24,8 @@ export default function fetchInterviewData() {
 // }
 
 export function fetchInterviewDataDone(response) {
-  return {
-    type: "FETCH_INTERVIEW_DATA_DONE",
-    payload: response,
-  };
+	return {
+		type: "FETCH_INTERVIEW_DATA_DONE",
+		payload: response,
+	};
 }

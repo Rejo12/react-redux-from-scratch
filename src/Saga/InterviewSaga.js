@@ -3,11 +3,11 @@ import { fetchInterviewDataApi } from "../Api/InterviewApi";
 import { fetchInterviewDataDone } from "../Action.js/InterviewAction";
 
 export function* fetchInterviewData() {
-  try {
-    const response = yield call(fetchInterviewDataApi);
-    yield put(fetchInterviewDataDone(response.data));
-    // yield call();
-  } catch (err) {}
+	try {
+		const response = yield call(fetchInterviewDataApi);
+		yield put(fetchInterviewDataDone(response.data));
+		// yield call();
+	} catch (err) {}
 }
 
 // export function* WatchInterviewSaga() {
