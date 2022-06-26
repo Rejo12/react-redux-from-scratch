@@ -8,7 +8,7 @@ import rootReducer from "../src/reducer";
 import DragNDrop from "./components/GamesContainer";
 import GameComp from "./components/Games/TakeABreak";
 import WrapperComponent from "./components/WrapperComponent";
-import CustomHooks from "./components/CustomHooks";
+import { CustomHooks } from "./components/CustomHooks";
 import Index from "./components/Index";
 import AppLayout from "./components/AppLayout";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -29,6 +29,8 @@ import Main from "./components/Interview/Main";
 import ParentCompMemo from "./components/ReactMemo/ParentComp";
 import ErrorBoundary from "./components/ErrorBoundary";
 import rootSaga from "./Saga/rootSaga";
+import BaseComponent from "./components/HocStudy/BaseComponent";
+import FormComponent from "./components/HocStudy/FormComponent";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -75,6 +77,8 @@ ReactDOM.render(
               <Route path="/interview-xc" component={ParentComp} />
               <Route path="/interview-inventiv" component={Main} />
               <Route path="/react-memo" component={ParentCompMemo} />
+              <Route path="/hoc-study" component={BaseComponent} />
+              <Route path="/render-props" component={FormComponent} />
               {/* </Suspense> */}
             </Switch>
           </div>

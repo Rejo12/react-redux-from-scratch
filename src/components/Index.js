@@ -177,6 +177,26 @@ const Index = ({ history }) => {
                   </a>
                 </li>
               </ul>
+              <ul>
+                <li>
+                  <a
+                    className="hoverClass"
+                    onClick={(e) => changeRoute("/hoc-study")}
+                  >
+                    HOC
+                  </a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a
+                    className="hoverClass"
+                    onClick={(e) => changeRoute("/render-props")}
+                  >
+                    Render Props
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </section>
