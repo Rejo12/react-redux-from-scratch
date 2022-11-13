@@ -199,6 +199,19 @@ const Index = ({ history }) => {
               </ul>
             </li>
           </ul>
+          <li>
+            <a className="hoverClass" onClick={(e) => changeRoute("/axios")}>
+              Axios
+            </a>
+          </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/coding-interview")}
+            >
+              Coding interview of click
+            </a>
+          </li>
         </section>
       </div>
     </div>

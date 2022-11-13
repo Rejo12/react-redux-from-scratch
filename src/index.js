@@ -31,6 +31,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import rootSaga from "./Saga/rootSaga";
 import BaseComponent from "./components/HocStudy/BaseComponent";
 import FormComponent from "./components/HocStudy/FormComponent";
+import Display from "./components/Axios/Display";
+import ClickComponnent from "./components/CodingInterview/ClickComponent";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -79,6 +81,8 @@ ReactDOM.render(
               <Route path="/react-memo" component={ParentCompMemo} />
               <Route path="/hoc-study" component={BaseComponent} />
               <Route path="/render-props" component={FormComponent} />
+              <Route path="/axios" component={Display} />
+              <Route path="/coding-interview" component={ClickComponnent} />
               {/* </Suspense> */}
             </Switch>
           </div>
