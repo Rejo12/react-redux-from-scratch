@@ -33,6 +33,8 @@ import BaseComponent from "./components/HocStudy/BaseComponent";
 import FormComponent from "./components/HocStudy/FormComponent";
 import Display from "./components/Axios/Display";
 import ClickComponnent from "./components/CodingInterview/ClickComponent";
+import DisplayTree from "./components/CodingInterview/DisplayTreeStructure";
+import Synonym from "./components/Synonyms/Synonym";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -51,7 +53,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div style={{ position: "relative" }}>
+      <div style={{}}>
         <AppLayout />
         <ErrorBoundary>
           <div className="appBodyCSS">
@@ -83,6 +85,8 @@ ReactDOM.render(
               <Route path="/render-props" component={FormComponent} />
               <Route path="/axios" component={Display} />
               <Route path="/coding-interview" component={ClickComponnent} />
+              <Route path="/tree-structure" component={DisplayTree} />
+              <Route path="/synonym" component={Synonym} />
               {/* </Suspense> */}
             </Switch>
           </div>

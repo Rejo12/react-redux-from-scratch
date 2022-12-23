@@ -212,6 +212,19 @@ const Index = ({ history }) => {
               Coding interview of click
             </a>
           </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/tree-structure")}
+            >
+              Coding interview of displaying tree structure
+            </a>
+          </li>
+          <li>
+            <a className="hoverClass" onClick={(e) => changeRoute("/synonym")}>
+              Coding interview for finding synonym word
+            </a>
+          </li>
         </section>
       </div>
     </div>

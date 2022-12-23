@@ -2,8 +2,9 @@
     display:flex;
     flex-direction: column;
     align-items: flex-start;
-    height:100vh;
-    padding-left: 2em
+    /* height:100vh; */
+    padding-left: 2em;
+    /* overflow-y: scroll; */
 }
 
 /* .hoverClass:hover{
@@ -146,4 +147,22 @@
   position: absolute;
   background-color: blue;
   border-radius: 50%;
+}
+
+.entryButton{
+  border:4px solid white;
+  border-radius: 5px;
+}
+
+.entryButton:hover{
+  border:4px solid lightblue;
+}
+
+button{
+  border-radius: 5px;
+  background-color: rgb(191 207 222);
+  color: #000000cc;
+  margin: 0 5px;
+  border: none;
+  padding: 5px 13px;
 }
