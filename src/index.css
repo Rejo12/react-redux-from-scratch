@@ -166,3 +166,15 @@ button{
   border: none;
   padding: 5px 13px;
 }
+
+.permission-container{
+  /* display: grid; */
+}
+
+#even::before{
+  /* border:3px solid red; 
+  display: grid;
+  grid-template-columns: repeat(3,1fr); */
+  content: "read";
+  white-space: pre;
+}

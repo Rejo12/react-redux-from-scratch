@@ -225,6 +225,14 @@ const Index = ({ history }) => {
               Coding interview for finding synonym word
             </a>
           </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/permission")}
+            >
+              Coding interview for read,write,delete
+            </a>
+          </li>
         </section>
       </div>
     </div>

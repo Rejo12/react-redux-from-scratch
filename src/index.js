@@ -35,6 +35,7 @@ import Display from "./components/Axios/Display";
 import ClickComponnent from "./components/CodingInterview/ClickComponent";
 import DisplayTree from "./components/CodingInterview/DisplayTreeStructure";
 import Synonym from "./components/Synonyms/Synonym";
+import Permission from "./components/PermisssionMap";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -87,6 +88,7 @@ ReactDOM.render(
               <Route path="/coding-interview" component={ClickComponnent} />
               <Route path="/tree-structure" component={DisplayTree} />
               <Route path="/synonym" component={Synonym} />
+              <Route path="/permission" component={Permission} />
               {/* </Suspense> */}
             </Switch>
           </div>
