@@ -51,7 +51,10 @@ const store = createStore(
   compose(applyMiddleware(sagaMiddleware, thunk))
 );
 sagaMiddleware.run(rootSaga);
-ReactDOM.render(
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
+
+root.render(
   <Provider store={store}>
     <Router>
       <div style={{}}>
@@ -95,6 +98,5 @@ ReactDOM.render(
         </ErrorBoundary>
       </div>
     </Router>
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );
