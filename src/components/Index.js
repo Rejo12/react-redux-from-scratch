@@ -176,6 +176,14 @@ const Index = ({ history }) => {
                     Inventiv-5/4/22
                   </a>
                 </li>
+                <li>
+                  <a
+                    className="hoverClass"
+                    onClick={(e) => changeRoute("/interview-dragNdrop")}
+                  >
+                    dragNdrop
+                  </a>
+                </li>
               </ul>
               <ul>
                 <li>

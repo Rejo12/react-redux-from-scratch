@@ -36,6 +36,7 @@ import ClickComponnent from "./components/CodingInterview/ClickComponent";
 import DisplayTree from "./components/CodingInterview/DisplayTreeStructure";
 import Synonym from "./components/Synonyms/Synonym";
 import Permission from "./components/PermisssionMap";
+import DragDrop from "./components/CodingInterview/DragDrop";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -84,6 +85,7 @@ root.render(
               <Route path="/counter" component={Counter} />
               <Route path="/interview-xc" component={ParentComp} />
               <Route path="/interview-inventiv" component={Main} />
+              <Route path="/interview-dragNdrop" component={DragDrop} />
               <Route path="/react-memo" component={ParentCompMemo} />
               <Route path="/hoc-study" component={BaseComponent} />
               <Route path="/render-props" component={FormComponent} />

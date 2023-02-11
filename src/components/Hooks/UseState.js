@@ -1,14 +1,24 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-const StateHooks=()=>{
-	const [inputValue,setInputValue] = useState("");
-	return(
-		<>
-			<input placeholder="typing..." onChange={e=>setInputValue(e.target.value)} />
-			<br/><br/>
-			{inputValue}
-		</>
-	);
+const getInitialValue = () => {
+  console.log("getInitialValue");
+  return "hi";
+};
+const StateHooks = () => {
+  const [inputValue, setInputValue] = useState(getInitialValue());
+  console.log("dfghj");
+  return (
+    <>
+      <input
+        placeholder="typing..."
+        onChange={(e) => setInputValue(e.target.value)}
+        value={inputValue}
+      />
+      <br />
+      <br />
+      {inputValue}
+    </>
+  );
 };
 
 export default StateHooks;
