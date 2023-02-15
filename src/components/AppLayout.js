@@ -5,7 +5,7 @@ const AppLayout=()=>{
 	return(
 		<div className="wrapper"> 
 			<div className="layoutContainer">
-				<div>
+				<div style={{justifySelf: 'end'}}>
 					<h1 className="fontWt400 glowyText">
                 React-Redux
 					</h1>

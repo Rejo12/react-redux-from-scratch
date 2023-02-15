@@ -241,6 +241,14 @@ const Index = ({ history }) => {
               Coding interview for read,write,delete
             </a>
           </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/rating-component")}
+            >
+              Rating Component
+            </a>
+          </li>
         </section>
       </div>
     </div>

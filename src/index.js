@@ -37,6 +37,7 @@ import DisplayTree from "./components/CodingInterview/DisplayTreeStructure";
 import Synonym from "./components/Synonyms/Synonym";
 import Permission from "./components/PermisssionMap";
 import DragDrop from "./components/CodingInterview/DragDrop";
+import Rating from "./components/RatingComponent/Rating";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -94,6 +95,7 @@ root.render(
               <Route path="/tree-structure" component={DisplayTree} />
               <Route path="/synonym" component={Synonym} />
               <Route path="/permission" component={Permission} />
+              <Route path="/rating-component" component={Rating} />
               {/* </Suspense> */}
             </Switch>
           </div>
