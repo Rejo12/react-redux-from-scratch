@@ -58,7 +58,7 @@
 /* AppLayout CSS */
 
 .layoutContainer {
-  /* position: fixed; */
+  position: fixed;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   flex-direction: column;

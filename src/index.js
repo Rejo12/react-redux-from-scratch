@@ -38,6 +38,9 @@ import Synonym from "./components/Synonyms/Synonym";
 import Permission from "./components/PermisssionMap";
 import DragDrop from "./components/CodingInterview/DragDrop";
 import Rating from "./components/RatingComponent/Rating";
+import Form from "./components/CustomHooks/Form";
+import IncrementComp from "./components/CustomHooks/IncrementComp";
+import Pointer from "./components/CustomHooks/Pointer";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -96,6 +99,9 @@ root.render(
               <Route path="/synonym" component={Synonym} />
               <Route path="/permission" component={Permission} />
               <Route path="/rating-component" component={Rating} />
+              <Route path="/useLocalStorage" component={Form} />
+              <Route path="/useDebounce" component={IncrementComp} />
+              <Route path="/useHistory" component={Pointer} />
               {/* </Suspense> */}
             </Switch>
           </div>

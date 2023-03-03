@@ -249,6 +249,30 @@ const Index = ({ history }) => {
               Rating Component
             </a>
           </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/useLocalStorage")}
+            >
+              useLocalStorage
+            </a>
+          </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/useDebounce")}
+            >
+              useDebounce
+            </a>
+          </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/useHistory")}
+            >
+              useHistory
+            </a>
+          </li>
         </section>
       </div>
     </div>
