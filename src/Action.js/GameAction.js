@@ -7,6 +7,23 @@ const Actions = {
 				data:event
 			});
 		};
+	},
+
+	hamburgerClicked:(selectionValue)=>{
+		return dispatch => {
+		dispatch({
+			type:"SET_HAMBURGER_VALUE",
+			payload:selectionValue
+		})
+	}
+	},
+
+	handleMenuSelect:()=>{
+		return dispatch => {
+			dispatch({
+				type:"SET_MENU_SELECTED"
+			})
+		}
 	}
 };
 

@@ -41,6 +41,7 @@ import Rating from "./components/RatingComponent/Rating";
 import Form from "./components/CustomHooks/Form";
 import IncrementComp from "./components/CustomHooks/IncrementComp";
 import Pointer from "./components/CustomHooks/Pointer";
+import HamburgerComponent from "./components/HamburgerComponent";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -64,6 +65,7 @@ root.render(
     <Router>
       <div style={{}}>
         <AppLayout />
+        <HamburgerComponent/>
         <ErrorBoundary>
           <div className="appBodyCSS">
             <Switch>

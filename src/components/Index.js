@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import HamburgerComponent from "./HamburgerComponent";
 
 const Index = ({ history }) => {
   const changeRoute = (route) => {
@@ -9,6 +10,7 @@ const Index = ({ history }) => {
 
   return (
     <div className="main">
+      {/* <HamburgerComponent/> */}
       <br />
       <div className="welcome">
         <section>

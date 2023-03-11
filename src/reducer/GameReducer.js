@@ -2,6 +2,8 @@ const initialState = {
 	name: "Rejo",
 	age: 26,
 	toggle: false,
+	hamburgerSelected:false,
+	selectedMenu:null
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -14,6 +16,12 @@ export default function reducer(state = initialState, action = {}) {
 			name: "updatedName",
 			toggle: !state.toggle,
 		});
+
+	case "SET_HAMBURGER_VALUE":
+		return {...state,hamburgerSelected:action.payload}
+
+	case "SET_MENU_SELECTED":
+		return{...state,selectedMenu:'Option 1',hamburgerSelected:false}
 
 	default:
 		return state;
