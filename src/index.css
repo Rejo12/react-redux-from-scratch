@@ -105,8 +105,8 @@
 .appBodyCSS {
   background-color: #111111a6 !important;
   color: white !important;
-  /* margin-left: 87px; */
-  padding: 59px 30px;
+  /* margin-top: 87px; */
+  padding: 109px 30px;
   /* border-radius: 30px 0; */
   min-height: 100vh;
 }
@@ -394,4 +394,75 @@ p[class='rating-paragraph']+.rating-value {
   margin-top: -2px;
   height: 2px;
   transform: rotate(-225deg);
+}
+
+.loader {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+.loader::before {
+  content: '';
+  width: 110px;
+  height: 110px;
+  top: 56px;
+  left: -110px;
+  border-radius: 50%;
+  position: absolute;
+  animation: 2.5s linear infinite spinner;
+  border: solid 5px #cfd0d1;
+  border-bottom-color: #1c87c9;
+  border-top-color: #1c87c9;
+}
+
+@keyframes spinner {
+  0% {
+    transform: translate3d(100%, -50%, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(100%, -50%, 0) rotate(360deg);
+  }
+}
+
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.binary-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  /* top: 100px; */
+  /* left: 50vh */
+}
+
+.binary-left {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  /* top: 150px; */
+  left: -50px;
+  /* right:50px; */
+  /* align-items: center; */
 }

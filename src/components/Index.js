@@ -207,6 +207,16 @@ const Index = ({ history }) => {
                   </a>
                 </li>
               </ul>
+              <ul>
+                <li>
+                  <a
+                    className="hoverClass"
+                    onClick={(e) => changeRoute("/binary-tree")}
+                  >
+                    Binary Tree
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
           <li>

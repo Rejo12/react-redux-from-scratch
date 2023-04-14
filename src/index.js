@@ -42,6 +42,7 @@ import Form from "./components/CustomHooks/Form";
 import IncrementComp from "./components/CustomHooks/IncrementComp";
 import Pointer from "./components/CustomHooks/Pointer";
 import HamburgerComponent from "./components/HamburgerComponent";
+import BinaryTree from "./components/Interview/BinaryTree";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -104,6 +105,7 @@ root.render(
               <Route path="/useLocalStorage" component={Form} />
               <Route path="/useDebounce" component={IncrementComp} />
               <Route path="/useHistory" component={Pointer} />
+              <Route path="/binary-tree" component={BinaryTree} />
               {/* </Suspense> */}
             </Switch>
           </div>
