@@ -43,6 +43,8 @@ import IncrementComp from "./components/CustomHooks/IncrementComp";
 import Pointer from "./components/CustomHooks/Pointer";
 import HamburgerComponent from "./components/HamburgerComponent";
 import BinaryTree from "./components/Interview/BinaryTree";
+import List from "./components/Views/List";
+import Details from "./components/Views/Details";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -106,6 +108,8 @@ root.render(
               <Route path="/useDebounce" component={IncrementComp} />
               <Route path="/useHistory" component={Pointer} />
               <Route path="/binary-tree" component={BinaryTree} />
+              <Route path="/listView" component={List} />
+              <Route path="/post/:postId" component={Details} />
               {/* </Suspense> */}
             </Switch>
           </div>

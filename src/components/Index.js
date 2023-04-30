@@ -285,6 +285,14 @@ const Index = ({ history }) => {
               useHistory
             </a>
           </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/listView")}
+            >
+              List View
+            </a>
+          </li>
         </section>
       </div>
     </div>

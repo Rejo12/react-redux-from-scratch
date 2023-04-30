@@ -466,3 +466,35 @@ p[class='rating-paragraph']+.rating-value {
   /* right:50px; */
   /* align-items: center; */
 }
+
+.table-props {
+  height: 75vh;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 7px;
+}
+
+.text-box{
+  width: 75%;
+  height: 64px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.text-field{
+  display: flex;
+  flex-direction: column;
+}
+
+.form{
+  display: grid;
+  grid-template-columns: repeat(2,1fr)
+}
+
+.text-box-error{
+  width: 75%;
+  height: 64px;
+  border-radius: 5px;
+  outline: none;
+  border-bottom: 4px solid #fc0000c2;
+}

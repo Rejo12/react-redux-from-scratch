@@ -22,21 +22,28 @@ class Api {
     });
   }
 
-  getPosts() {
+    getPosts=()=>{
+   // const newApi = new Api();
     return this.apiInterface.get("/posts");
   }
 
-  savePosts(reqBody) {
+  savePosts=(reqBody)=> {
     return this.apiInterface.post("/posts", { reqBody });
   }
 
-  updatePost(reqBody) {
+  updatePost=(reqBody)=> {
     return this.apiInterface.put("/posts/1", { reqBody });
   }
 
-  deletePost() {
+  deletePost=()=> {
     return this.apiInterface.delete("/posts/1");
+  }
+
+  getPostById=(id)=>{
+    return this.apiInterface.get(`/posts/${id}`)
   }
 }
 
-export default Api;
+
+
+export default new Api();
