@@ -498,3 +498,36 @@ p[class='rating-paragraph']+.rating-value {
   outline: none;
   border-bottom: 4px solid #fc0000c2;
 }
+
+.cl-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cl-imgContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+}
+
+.container{
+  width: 500px;
+  height: 500px;
+  background-color: #1c87c9;
+  clip-path: circle(10%);
+  transition: all 3s ease;
+}
+
+.container:hover{
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); */
+  clip-path: circle(50%);
+}
+
+.container p {
+  color: #fff;
+    font-size: 55px;
+    align-self: center;
+}

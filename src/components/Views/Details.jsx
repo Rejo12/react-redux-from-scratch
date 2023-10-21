@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom'
+import { useParams, useLocation, useNav } from 'react-router-dom'
 import { connect } from 'react-redux';
+import queryString from 'query-string';
 import { fetchPostById, clearSelectedPost } from '../../Action.js/InterviewAction';
 import { createNewState } from '../../Reusable/hooks';
 
@@ -8,7 +9,7 @@ const Details = (props) => {
     const params = useParams();
     const location = useLocation();
     //console.log({ newState })
-    console.log({ props })
+    // console.log({ props })
     const [newState, setNewState] = createNewState(props.selectedPost || {}, ['title', 'body'], {})
     useEffect(() => {
         props.fetchPostById(params.postId)
@@ -21,6 +22,9 @@ const Details = (props) => {
         console.log("key pressed", e.target.value)
         setNewState({ ...newState, [field]: e.target.value })
     }
+    // let obj = { key: 1, value: 2 }
+    // console.log(location, propshistory, queryString.stringify(obj))
+
     // TO DO : understand this
     console.log(newState.title, newState.title ? (newState.title.length == 0 ? 'text-box' : 'text-box error') : 'text-box-default')
     return (

@@ -45,6 +45,7 @@ import HamburgerComponent from "./components/HamburgerComponent";
 import BinaryTree from "./components/Interview/BinaryTree";
 import List from "./components/Views/List";
 import Details from "./components/Views/Details";
+import Carousel from "./components/Views/Carousel";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -68,7 +69,7 @@ root.render(
     <Router>
       <div style={{}}>
         <AppLayout />
-        <HamburgerComponent/>
+        <HamburgerComponent />
         <ErrorBoundary>
           <div className="appBodyCSS">
             <Switch>
@@ -110,6 +111,7 @@ root.render(
               <Route path="/binary-tree" component={BinaryTree} />
               <Route path="/listView" component={List} />
               <Route path="/post/:postId" component={Details} />
+              <Route path="/carousel" component={Carousel} />
               {/* </Suspense> */}
             </Switch>
           </div>
