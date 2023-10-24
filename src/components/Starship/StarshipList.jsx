@@ -21,26 +21,29 @@ const StarshipList = (props) => {
 
     const handleChange = (e) => {
         setSearchText(e.target.value)
-        let text = e.target.value
-        let timerId;
-        if (!timerId) {
-            timerId = setInterval(() => {
-                filterSearch(text, timerId)
-            }, 3000)
-        }
-        else {
-            clearInterval(timerId)
-        }
+
     }
 
+    useEffect(() => {
+        let timerId = setTimeout(() => {
+            filterSearch(searchText, timerId)
+        }, 500)
+
+        return () => {
+            clearTimeout(timerId)
+        }
+    }, [searchText])
+
+
     const filterSearch = (text, timerId) => {
+        console.log(text, timerId)
         let resultList = apiResponse.results.filter((item) => {
             // console.log(item)
             return item.name.toLowerCase().includes(text.toLowerCase()) || item.manufacturer.toLowerCase().includes(text.toLowerCase())
         })
         // console.log({ resultList })
         setListData(resultList)
-        clearInterval(timerId)
+        clearTimeout(timerId)
     }
 
     const handleClick = (item) => {
