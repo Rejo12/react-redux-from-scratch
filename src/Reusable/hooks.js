@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const createNewState = (input, fieldsRequired = [], shape) => {
   const [newState, setNewState] = useState(shape);
@@ -18,4 +19,41 @@ export const createNewState = (input, fieldsRequired = [], shape) => {
 
   //   console.log({ newState });
   return [newState, setNewState];
+};
+
+export const useFetchApi = (url) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [apiResponse, setApiResponse] = useState(null);
+
+  const fetchApi = async () => {
+    const response = await axios.get(url);
+    setApiResponse(response.data);
+    setIsSuccess(true);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    try {
+      fetchApi();
+    } catch (e) {
+      setIsSuccess(false);
+      setIsLoading(false);
+    }
+  }, []);
+
+  return [isLoading, isSuccess, apiResponse];
+};
+
+export const useSelectedData = (item) => {
+  const [selectedData, setSelectedData] = useState(null);
+
+  const storeData = (item) => {
+    console.log({ item });
+    sessionStorage.setItem("ship", JSON.stringify(item));
+    setSelectedData(item);
+  };
+
+  return [selectedData, storeData];
 };

@@ -46,6 +46,8 @@ import BinaryTree from "./components/Interview/BinaryTree";
 import List from "./components/Views/List";
 import Details from "./components/Views/Details";
 import Carousel from "./components/Views/Carousel";
+import StarshipList from "./components/StarShip/StarshipList";
+import CardView from "./components/Starship/CardView";
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -104,6 +106,8 @@ root.render(
               <Route path="/tree-structure" component={DisplayTree} />
               <Route path="/synonym" component={Synonym} />
               <Route path="/permission" component={Permission} />
+              <Route path="/starship-list" component={StarshipList} />
+              <Route path="/card" component={CardView} />
               <Route path="/rating-component" component={Rating} />
               <Route path="/useLocalStorage" component={Form} />
               <Route path="/useDebounce" component={IncrementComp} />

@@ -256,6 +256,14 @@ const Index = ({ history }) => {
           <li>
             <a
               className="hoverClass"
+              onClick={(e) => changeRoute("/starship-list")}
+            >
+              Coding interview to display starship
+            </a>
+          </li>
+          <li>
+            <a
+              className="hoverClass"
               onClick={(e) => changeRoute("/rating-component")}
             >
               Rating Component
