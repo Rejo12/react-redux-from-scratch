@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../../Action.js/InterviewAction';
 import ModeEditOutlineSharpIcon from '@mui/icons-material/ModeEditOutlineSharp';
 import columns, { rowFormatter } from './column';
+import { ThemeContext } from '../../RouteComponent';
 
 // const columns = [
 //     { field: 'id', headerName: 'ID', width: 70 },
@@ -32,6 +33,8 @@ import columns, { rowFormatter } from './column';
 
 const List = (props) => {
 
+    const { currentTheme, setCurrentTheme } = useContext(ThemeContext)
+
     useEffect(() => {
         props.fetchPosts()
     }, [])
@@ -43,8 +46,9 @@ const List = (props) => {
         console.log({ value })
         props.history.push(`/post/${value.row.id}`)
     }
+    const colorStyle = currentTheme === 'light' ? { backgroundColor: '#F7E7CE', color: '#1E2640' } : {}
     return (
-        <div className='table-props'>
+        <div className='table-props' style={colorStyle}>
             <DataGrid
                 rows={rows}
                 columns={columns}
