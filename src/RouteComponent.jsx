@@ -41,6 +41,8 @@ import Details from "./components/Views/Details";
 import Carousel from "./components/Views/Carousel";
 import StarshipList from "./components/StarShip/StarshipList";
 import CardView from "./components/Starship/CardView";
+import TicTacToe from './components/Games/TicTacToe';
+import Pagination from './components/CodingInterview/Pagination';
 
 export const ThemeContext = createContext();
 const RouteComponent = () => {
@@ -96,6 +98,8 @@ const RouteComponent = () => {
                             <Route path="/listView" component={List} />
                             <Route path="/post/:postId" component={Details} />
                             <Route path="/carousel" component={Carousel} />
+                            <Route path="/ticTacToe" component={TicTacToe} />
+                            <Route path="/pagination" component={Pagination} />
                             {/* </Suspense> */}
                         </Switch>
                     </div>

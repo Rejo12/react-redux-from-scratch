@@ -303,6 +303,22 @@ const Index = ({ history }) => {
               Carousel View
             </a>
           </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/ticTacToe")}
+            >
+              Tic Tac Toe
+            </a>
+          </li>
+          <li>
+            <a
+              className="hoverClass"
+              onClick={(e) => changeRoute("/pagination")}
+            >
+              Pagination
+            </a>
+          </li>
         </section>
       </div>
     </div>
