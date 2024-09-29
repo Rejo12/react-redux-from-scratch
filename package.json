@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development",
-    "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --fix"
+    "lint": "eslint",
+    "lint-fix": "eslint \"src/**/*.{js,jsx}\" --fix"
   },
   "author": "rejo",
   "license": "ISC",
@@ -17,9 +17,13 @@
     "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/preset-env": "^7.12.17",
     "@babel/preset-react": "^7.12.13",
+    "@eslint/js": "^9.11.1",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.2",
-    "eslint-plugin-react": "^7.29.4",
+    "eslint": "^9.11.1",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "globals": "^15.9.0",
     "react-error-overlay": "^6.0.9",
     "react-hot-loader": "^4.13.1",
     "style-loader": "^2.0.0",
@@ -35,7 +39,6 @@
     "@mui/material": "^5.12.0",
     "@mui/x-data-grid": "^6.2.0",
     "axios": "^0.24.0",
-    "eslint": "^8.13.0",
     "multiselect-react-dropdown": "^1.6.11",
     "query-string": "^8.1.0",
     "react": "^18.2.0",

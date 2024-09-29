@@ -1,31 +1,28 @@
-import React,{useImperativeHandle,forwardRef,useState} from "react";
+import React, { useImperativeHandle, forwardRef, useState } from "react";
 
-const Button =forwardRef((props,ref)=>{
+const Button = forwardRef((props, ref) => {
+  const [toggle, setToggle] = useState(false);
 
-	const [toggle,setToggle] = useState(false);
+  console.log("ref", ref);
 
-	console.log("ref",ref);
-
-	useImperativeHandle(ref,()=>({
-		alterToggle(){
-			setToggle(!toggle);
-		},
-		testvalue:"fghjk"
-	})
-	);
-	return(
-		<>
-			<button 
-				// onClick={e=>{setToggle(!toggle)}}
-			>
-            Button from child
-			</button>
-			<br/>
-			{toggle &&(
-				"Toggle is true"
-			)}
-		</>
-	);
+  useImperativeHandle(ref, () => ({
+    alterToggle() {
+      setToggle(!toggle);
+    },
+    testvalue: "fghjk",
+  }));
+  return (
+    <>
+      <button
+      // onClick={e=>{setToggle(!toggle)}}
+      >
+        Button from child
+      </button>
+      <br />
+      {toggle && "Toggle is true"}
+    </>
+  );
 });
+Button.displayName = "Button";
 
 export default Button;

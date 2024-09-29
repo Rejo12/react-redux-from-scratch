@@ -47,7 +47,7 @@ const Memo = () => {
   };
   const doubleNumber = (num) => {
     console.log("slow functions");
-    for (var i = 0; i < 1000000000; i++) {}
+    // for (var i = 0; i < 1000000000; i++) {}
     return num * 2;
   };
   const doubleNum = useMemo(() => doubleNumber(number), [number]);
