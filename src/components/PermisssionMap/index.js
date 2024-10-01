@@ -1,16 +1,16 @@
-import React, { useState, useTransition } from "react";
-import styled from "styled-components";
+import React, { useState, useTransition } from 'react'
+import styled from 'styled-components'
 
 const StyledInput = styled.input`
   width: 35px;
   height: 35px;
   margin: 5px;
-`;
+`
 
 const Permission = () => {
   const [permission, setPermission] = useState([
     {
-      type: "read",
+      type: 'read',
       dataList: [
         {
           value1: false,
@@ -21,7 +21,7 @@ const Permission = () => {
       ],
     },
     {
-      type: "write",
+      type: 'write',
       dataList: [
         {
           value1: true,
@@ -32,7 +32,7 @@ const Permission = () => {
       ],
     },
     {
-      type: "delete",
+      type: 'delete',
       dataList: [
         {
           value1: false,
@@ -42,10 +42,10 @@ const Permission = () => {
         },
       ],
     },
-  ]);
+  ])
 
-  const [dummyState, setDummyState] = useState(null);
-  const [isPending, startTransition] = useTransition();
+  const [dummyState, setDummyState] = useState(null)
+  const [isPending, startTransition] = useTransition()
 
   const handleChange = (type, innerItem, e) => {
     //console.log(type, innerItem, e.target.checked);
@@ -55,30 +55,30 @@ const Permission = () => {
       everything is false --> delete is false  
     
     */
-    const tmpState = JSON.parse(JSON.stringify(permission));
+    const tmpState = JSON.parse(JSON.stringify(permission))
     for (let obj in tmpState) {
       //console.log(tmpState[obj].type, type);
       if (tmpState[obj].type === type) {
         for (let prop in tmpState[obj].dataList) {
-          let key = Object.keys(innerItem);
-          let key1 = Object.keys(tmpState[obj].dataList[prop]);
+          let key = Object.keys(innerItem)
+          let key1 = Object.keys(tmpState[obj].dataList[prop])
           if (key1[0] === key[0]) {
             //console.log(key1[0]);
-            tmpState[obj].dataList[prop][key[0]] = e.target.checked;
+            tmpState[obj].dataList[prop][key[0]] = e.target.checked
           }
         }
-        break;
+        break
       }
     }
-    if (type === "delete") {
+    if (type === 'delete') {
       for (let obj in tmpState) {
         //console.log(tmpState[obj].type, type);
         for (let prop in tmpState[obj].dataList) {
-          let key = Object.keys(innerItem);
-          let key1 = Object.keys(tmpState[obj].dataList[prop]);
+          let key = Object.keys(innerItem)
+          let key1 = Object.keys(tmpState[obj].dataList[prop])
           if (key1[0] === key[0] && e.target.checked) {
             //console.log(key1[0]);
-            tmpState[obj].dataList[prop][key[0]] = e.target.checked;
+            tmpState[obj].dataList[prop][key[0]] = e.target.checked
           }
         }
       }
@@ -88,16 +88,16 @@ const Permission = () => {
           //console.log(tmpState[obj].type, type);
           for (let obj in tmpState) {
             //console.log(tmpState[obj].type, type);
-            if (tmpState[obj].type === "delete") {
+            if (tmpState[obj].type === 'delete') {
               for (let prop in tmpState[obj].dataList) {
-                let key = Object.keys(innerItem);
-                let key1 = Object.keys(tmpState[obj].dataList[prop]);
+                let key = Object.keys(innerItem)
+                let key1 = Object.keys(tmpState[obj].dataList[prop])
                 if (key1[0] === key[0]) {
                   //console.log(key1[0]);
-                  tmpState[obj].dataList[prop][key[0]] = e.target.checked;
+                  tmpState[obj].dataList[prop][key[0]] = e.target.checked
                 }
               }
-              break;
+              break
             }
           }
         }
@@ -105,73 +105,73 @@ const Permission = () => {
     }
     //console.log({ tmpState });
 
-    setPermission(tmpState);
+    setPermission(tmpState)
 
     startTransition(() => {
-      setDummyState("new state");
-    });
+      setDummyState('new state')
+    })
 
     // setTimeout(() => {
     //   setDummyState(1);
     //   setDummyState(2);
     // }, 5000);
-  };
+  }
 
-  console.log("--------render-----------", isPending, dummyState);
+  console.log('--------render-----------', isPending, dummyState)
   return (
     <div className="permission-container">
       {permission.length > 0
         ? permission.map((item) => {
             return item.dataList.map((innerItem, index) => {
-              let checkboxValue = Object.keys(innerItem);
+              let checkboxValue = Object.keys(innerItem)
               //console.log("here", index);
-              if (item.type === "read") {
+              if (item.type === 'read') {
                 return (
                   <>
                     <StyledInput
-                      label={"text"}
+                      label={'text'}
                       type="checkbox"
                       className="permission-checkbox"
-                      id={index % 2 === 0 ? "odd" : "even"}
+                      id={index % 2 === 0 ? 'odd' : 'even'}
                       key={`${item.type}-${index}`}
                       checked={innerItem[checkboxValue[0]]}
                       onChange={(e) => handleChange(item.type, innerItem, e)}
                     />
                   </>
-                );
-              } else if (item.type === "write") {
+                )
+              } else if (item.type === 'write') {
                 return (
                   <StyledInput
-                    label={"text"}
+                    label={'text'}
                     type="checkbox"
                     className="permission-checkbox"
-                    id={index % 2 === 0 ? "odd" : "even"}
+                    id={index % 2 === 0 ? 'odd' : 'even'}
                     key={`${item.type}-${index}`}
                     checked={innerItem[checkboxValue[0]]}
                     onChange={(e) => handleChange(item.type, innerItem, e)}
                   />
-                );
+                )
               } else {
                 return (
                   <StyledInput
-                    label={"text"}
+                    label={'text'}
                     type="checkbox"
                     className="permission-checkbox"
-                    id={index % 2 === 0 ? "odd" : "even"}
+                    id={index % 2 === 0 ? 'odd' : 'even'}
                     key={`${item.type}-${index}`}
                     checked={innerItem[checkboxValue[0]]}
                     onChange={(e) => handleChange(item.type, innerItem, e)}
                   />
-                );
+                )
               }
-            });
+            })
           })
         : "you don't have permission"}
       {/* <StyledInput type="checkbox" />
       <StyledInput type="checkbox" />
       <StyledInput type="checkbox" /> */}
     </div>
-  );
-};
+  )
+}
 
-export default Permission;
+export default Permission

@@ -1,20 +1,20 @@
-import React, { Fragment } from "react";
-import axios from "axios";
+import React, { Fragment } from 'react'
+import axios from 'axios'
 
 export default class Child1 extends React.Component {
   state = {
     data: [],
-  };
+  }
 
   static getDerivedStateFromProps(props, state) {
     if (props.interviewData.length !== state.data.length) {
-      return { data: props.interviewData };
+      return { data: props.interviewData }
     }
-    return null;
+    return null
   }
 
   render() {
-    const { data } = this.state;
+    const { data } = this.state
     // console.log("data", data, this.props.interviewData);
     return (
       <>
@@ -32,11 +32,11 @@ export default class Child1 extends React.Component {
                   <td>{item.id}</td>
                   <td>{item.name}</td>
                 </tr>
-              );
+              )
             })}
           </tbody>
         </table>
       </>
-    );
+    )
   }
 }

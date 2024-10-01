@@ -1,27 +1,27 @@
-import React from "react";
+import React from 'react'
 
 export default class Counter extends React.Component {
   constructor() {
-    super();
-    this.state = { count: 0, clicked: 0 };
+    super()
+    this.state = { count: 0, clicked: 0 }
   }
   componentDidMount() {
-    let timer;
-    let i = 0;
+    let timer
+    let i = 0
     timer = setInterval(() => {
-      i++;
-      this.updateCounter(i, timer);
-    }, 1000);
+      i++
+      this.updateCounter(i, timer)
+    }, 1000)
   }
 
   updateCounter(i, timer) {
     if (i < 11) {
       this.setState((prevState) => ({
         count: prevState.count + 1,
-      }));
+      }))
     } else {
-      clearInterval(timer);
-      console.log(timer);
+      clearInterval(timer)
+      console.log(timer)
     }
   }
 
@@ -44,13 +44,13 @@ export default class Counter extends React.Component {
     // console.log(foo[0]());
     // console.log(foo[1]());
     // console.log(foo[2]());
-    const arr = [7, 8, 9, 4, 5, 6];
+    const arr = [7, 8, 9, 4, 5, 6]
     for (var prop of arr) {
-      console.log(arr[prop]);
+      console.log(arr[prop])
     }
   }
   render() {
-    const list = [1, 2, 4, 5];
+    const list = [1, 2, 4, 5]
     return (
       <div>
         Count is:<b> {this.state.count}</b>
@@ -61,6 +61,6 @@ export default class Counter extends React.Component {
           Button clicked : <b>{this.state.clicked}</b>
         </div>
       </div>
-    );
+    )
   }
 }

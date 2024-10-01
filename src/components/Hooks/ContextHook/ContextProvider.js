@@ -1,17 +1,17 @@
-import React,{createContext,useState} from "react";
-import Login from "./Login";
-import User from "./User";
+import React, { createContext, useState } from 'react'
+import Login from './Login'
+import User from './User'
 
-export const AppContext = createContext(null);
+export const AppContext = createContext(null)
 
-const ContextProvider=()=>{
-	const [userName,setUserName] = useState("");
-	return(
-		<AppContext.Provider value={{userName,setUserName}}>
-			<Login/>
-			<User/>
-		</AppContext.Provider>
-	);
-};
+const ContextProvider = () => {
+  const [userName, setUserName] = useState('')
+  return (
+    <AppContext.Provider value={{ userName, setUserName }}>
+      <Login />
+      <User />
+    </AppContext.Provider>
+  )
+}
 
-export default ContextProvider;
+export default ContextProvider

@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
 const useRandomJoke = (firstName, lastName) => {
-  const [joke, setJoke] = useState("");
+  const [joke, setJoke] = useState('')
 
   useEffect(() => {
     const fetchJoke = async () => {
       await fetch(
-        `https://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`
+        `https://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`,
       )
         .then((res) => res.json())
-        .then((data) => setJoke(data.value.joke));
-    };
-    fetchJoke();
-  }, [firstName, lastName]);
+        .then((data) => setJoke(data.value.joke))
+    }
+    fetchJoke()
+  }, [firstName, lastName])
 
-  return joke || "-";
-};
+  return joke || '-'
+}
 
-export default useRandomJoke;
+export default useRandomJoke

@@ -1,16 +1,16 @@
-import React from "react";
-import ButtonHOC from "./ButtonHoc";
+import React from 'react'
+import ButtonHOC from './ButtonHoc'
 
 class ButtonComponent extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       count: 0,
-    };
+    }
   }
   handleClick = (e) => {
-    console.log(e.target.values);
-  };
+    console.log(e.target.values)
+  }
   render() {
     return (
       <div>
@@ -20,8 +20,8 @@ class ButtonComponent extends React.Component {
         <br />
         Button has been clicked <strong>{this.props.dataToDisp}</strong> times
       </div>
-    );
+    )
   }
 }
 
-export default ButtonHOC(ButtonComponent, 5);
+export default ButtonHOC(ButtonComponent, 5)

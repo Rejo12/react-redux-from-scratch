@@ -1,10 +1,10 @@
-import { fetchInterviewDataApi } from "../Api/InterviewApi";
+import { fetchInterviewDataApi } from '../Api/InterviewApi'
 
 /*With Saga */
 export default function fetchInterviewData() {
   return {
-    type: "FETCH_INTERVIEW_DATA",
-  };
+    type: 'FETCH_INTERVIEW_DATA',
+  }
 }
 
 /*With thunk */
@@ -25,41 +25,41 @@ export default function fetchInterviewData() {
 
 export function fetchInterviewDataDone(response) {
   return {
-    type: "FETCH_INTERVIEW_DATA_DONE",
+    type: 'FETCH_INTERVIEW_DATA_DONE',
     payload: response,
-  };
+  }
 }
 
 export function fetchPosts() {
   return {
-    type: "FETCH_POSTS",
-  };
+    type: 'FETCH_POSTS',
+  }
 }
 
 export function fetchPostsDone(response) {
   return {
-    type: "FETCH_POSTS_DONE",
+    type: 'FETCH_POSTS_DONE',
     payload: response,
-  };
+  }
 }
 
 export function fetchPostById(id) {
-  console.log("inside actions");
+  console.log('inside actions')
   return {
-    type: "FETCH_POST_BY_ID",
+    type: 'FETCH_POST_BY_ID',
     payload: id,
-  };
+  }
 }
 
 export function fetchPostByIdDone(response) {
   return {
-    type: "FETCH_POST_BY_ID_DONE",
+    type: 'FETCH_POST_BY_ID_DONE',
     payload: response,
-  };
+  }
 }
 
 export function clearSelectedPost() {
   return {
-    type: "CLEAR_SELECTED_POST",
-  };
+    type: 'CLEAR_SELECTED_POST',
+  }
 }

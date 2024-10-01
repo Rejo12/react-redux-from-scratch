@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default class Child2 extends React.Component {
   render() {
@@ -9,6 +9,6 @@ export default class Child2 extends React.Component {
           and selected name is: <strong>{this.props.dataToPrint.name}</strong>
         </span>
       )
-    );
+    )
   }
 }

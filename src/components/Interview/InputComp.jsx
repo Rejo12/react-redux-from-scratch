@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const InputComp = (props) => {
-  const [msgText, setMsgText] = useState("");
-  const [id, setId] = useState(0);
+  const [msgText, setMsgText] = useState('')
+  const [id, setId] = useState(0)
   const handleChange = (e) => {
-    setMsgText(e.target.value);
-  };
+    setMsgText(e.target.value)
+  }
 
   const handleSubmit = () => {
-    setId((prevId) => prevId + 1);
-    let obj = { msgText, id };
+    setId((prevId) => prevId + 1)
+    let obj = { msgText, id }
     // console.log("msgText", props);
-    props.saveMsg(obj);
-    setMsgText("");
-  };
+    props.saveMsg(obj)
+    setMsgText('')
+  }
 
   return (
     <>
@@ -27,7 +27,7 @@ const InputComp = (props) => {
         Submit
       </button>
     </>
-  );
-};
+  )
+}
 
-export default InputComp;
+export default InputComp

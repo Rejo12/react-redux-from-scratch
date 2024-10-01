@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
-import HocComponent from "./HocComponent";
-import Skeleton from "./Skeleton";
+import React, { useRef } from 'react'
+import HocComponent from './HocComponent'
+import Skeleton from './Skeleton'
 
 const BaseComponent = (props) => {
-  const myRef = useRef("basecomponent");
-  console.log(props, myRef);
+  const myRef = useRef('basecomponent')
+  console.log(props, myRef)
   return (
     <div {...props}>
       <h4>Case study about HOC</h4>
@@ -32,7 +32,7 @@ const BaseComponent = (props) => {
         <span>Current time is {props.currTime}</span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HocComponent(BaseComponent);
+export default HocComponent(BaseComponent)

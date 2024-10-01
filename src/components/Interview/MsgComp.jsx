@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
 const MsgComp = (props) => {
-  const { msgList } = props;
+  const { msgList } = props
   const handleDelete = (item) => {
-    props.deleteSelected(item.id);
-  };
+    props.deleteSelected(item.id)
+  }
   return (
     <>
       {msgList.map((item) => {
@@ -13,10 +13,10 @@ const MsgComp = (props) => {
             <span>{item.msgText}</span>
             <button onClick={(e) => handleDelete(item)}>Delete</button>
           </div>
-        );
+        )
       })}
     </>
-  );
-};
+  )
+}
 
-export default MsgComp;
+export default MsgComp

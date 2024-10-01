@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const getInitialValue = () => {
-  console.log("getInitialValue");
-  return "hi";
-};
+  console.log('getInitialValue')
+  return 'hi'
+}
 const StateHooks = () => {
-  const [inputValue, setInputValue] = useState(getInitialValue());
-  console.log("dfghj");
+  const [inputValue, setInputValue] = useState(getInitialValue())
+  console.log('dfghj')
   return (
     <>
       <input
@@ -18,7 +18,7 @@ const StateHooks = () => {
       <br />
       {inputValue}
     </>
-  );
-};
+  )
+}
 
-export default StateHooks;
+export default StateHooks

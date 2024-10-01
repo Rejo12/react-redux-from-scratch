@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import ButtonComp from "./ButtonComp";
+import styled from 'styled-components'
+import ButtonComp from './ButtonComp'
 
 export const Button = styled.button`
   width: 200px;
@@ -16,14 +16,14 @@ export const Button = styled.button`
       color: green;
     }
   }
-`;
+`
 
 export const ButtonLabel = styled.label`
   font-size: 1.2rem;
-`;
+`
 
 export const StyledButton = styled(ButtonComp)`
   width: 200px;
   height: 100px;
   background: ${(props) => props.backgroundColor};
-`;
+`

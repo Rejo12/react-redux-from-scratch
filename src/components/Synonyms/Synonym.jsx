@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { fetchSynonyms } from "./api";
-import { useGetSynonyms } from "./useGetSynonyms";
+import React, { useState } from 'react'
+import { fetchSynonyms } from './api'
+import { useGetSynonyms } from './useGetSynonyms'
 
 const Synonym = () => {
-  const [word, setWord] = useState("");
-  const { isFetchingSynonyms, synonyms, getSynonyms } = useGetSynonyms();
+  const [word, setWord] = useState('')
+  const { isFetchingSynonyms, synonyms, getSynonyms } = useGetSynonyms()
 
   const handleFetchSynonyms = (e) => {
-    e.preventDefault();
-    getSynonyms(word);
-  };
+    e.preventDefault()
+    getSynonyms(word)
+  }
   const handleSynonymsClicked = (newWord) => {
-    setWord(newWord);
-    getSynonyms(newWord);
-  };
+    setWord(newWord)
+    getSynonyms(newWord)
+  }
   return (
     <>
       <form onSubmit={handleFetchSynonyms}>
@@ -27,7 +27,7 @@ const Synonym = () => {
       </form>
       <ul>
         {isFetchingSynonyms
-          ? "Loading..."
+          ? 'Loading...'
           : synonyms.map((item) => (
               <li
                 key={item.word}
@@ -38,7 +38,7 @@ const Synonym = () => {
             ))}
       </ul>
     </>
-  );
-};
+  )
+}
 
-export default Synonym;
+export default Synonym

@@ -1,16 +1,16 @@
-import React, { useImperativeHandle, forwardRef, useState } from "react";
+import React, { useImperativeHandle, forwardRef, useState } from 'react'
 
 const Button = forwardRef((props, ref) => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false)
 
-  console.log("ref", ref);
+  console.log('ref', ref)
 
   useImperativeHandle(ref, () => ({
     alterToggle() {
-      setToggle(!toggle);
+      setToggle(!toggle)
     },
-    testvalue: "fghjk",
-  }));
+    testvalue: 'fghjk',
+  }))
   return (
     <>
       <button
@@ -19,10 +19,10 @@ const Button = forwardRef((props, ref) => {
         Button from child
       </button>
       <br />
-      {toggle && "Toggle is true"}
+      {toggle && 'Toggle is true'}
     </>
-  );
-});
-Button.displayName = "Button";
+  )
+})
+Button.displayName = 'Button'
 
-export default Button;
+export default Button

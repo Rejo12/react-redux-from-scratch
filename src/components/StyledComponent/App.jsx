@@ -1,6 +1,6 @@
-import React from "react";
-import { Button, ButtonLabel, StyledButton } from "./Button.style";
-import { GlobalStyle } from "./GlobalStyles.style";
+import React from 'react'
+import { Button, ButtonLabel, StyledButton } from './Button.style'
+import { GlobalStyle } from './GlobalStyles.style'
 
 const StyledApp = () => {
   return (
@@ -18,7 +18,7 @@ const StyledApp = () => {
       ></StyledButton>
       <Button backgroundColor="green">Click here</Button>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default StyledApp;
+export default StyledApp

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const MyStyles = styled.div`
   p {
@@ -12,29 +12,29 @@ const MyStyles = styled.div`
   span {
     color: #00fffa;
   }
-`;
+`
 export default function HocComponent(InputComponent, props) {
   return class extends React.Component {
-    state = { currTime: null };
+    state = { currTime: null }
     updateTime() {
       console.log(
         new Date().getHours(),
         new Date().getMinutes(),
-        new Date().getSeconds()
-      );
+        new Date().getSeconds(),
+      )
       this.setState({
         currTime: `${
           new Date().getHours() > 12
             ? new Date().getHours() - 12
             : new Date().getHours()
         }:${new Date().getMinutes()} ${
-          new Date().getHours() > 12 ? "PM" : "AM"
+          new Date().getHours() > 12 ? 'PM' : 'AM'
         }`,
-      });
+      })
     }
     render() {
       //   console.log(InputComponent, props);
-      const customStyle = { color: "red !important" };
+      const customStyle = { color: 'red !important' }
       return (
         <MyStyles>
           <InputComponent
@@ -43,7 +43,7 @@ export default function HocComponent(InputComponent, props) {
             // style={{ display: "none" }}
           />
         </MyStyles>
-      );
+      )
     }
-  };
+  }
 }

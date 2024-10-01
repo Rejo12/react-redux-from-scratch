@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const files = {
   children: [
     {
-      name: "node_modules",
+      name: 'node_modules',
       children: [
         {
-          name: "joi",
+          name: 'joi',
           children: [
             {
-              name: "local_package.json",
+              name: 'local_package.json',
             },
             {
-              name: "style.css",
+              name: 'style.css',
             },
           ],
         },
       ],
     },
     {
-      name: "package.json",
+      name: 'package.json',
     },
     {
-      name: "index.html",
+      name: 'index.html',
     },
   ],
-};
+}
 
 const Entry = ({ entry, depth }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false)
   return (
     <div>
       {entry.children?.length ? (
@@ -36,7 +36,7 @@ const Entry = ({ entry, depth }) => {
           className="entryButton"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          {isExpanded ? "- " : "+ "}
+          {isExpanded ? '- ' : '+ '}
           {entry.name}
         </button>
       ) : (
@@ -56,8 +56,8 @@ const Entry = ({ entry, depth }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
 const DisplayTree = () => {
   return (
@@ -66,7 +66,7 @@ const DisplayTree = () => {
         <Entry entry={item} depth={1} key={item.name} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default DisplayTree;
+export default DisplayTree

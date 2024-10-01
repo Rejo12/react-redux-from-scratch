@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 body{
@@ -6,4 +6,4 @@ body{
     font-size:2rem;
     font-family:Roto,Serif;
 }
-`;
+`

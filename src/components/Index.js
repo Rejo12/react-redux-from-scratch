@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import HamburgerComponent from "./HamburgerComponent";
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import HamburgerComponent from './HamburgerComponent'
 
 const Index = ({ history }) => {
   const changeRoute = (route) => {
-    console.log("inside change route", route);
-    history.push(route);
-  };
+    console.log('inside change route', route)
+    history.push(route)
+  }
 
   return (
     <div className="main">
@@ -22,10 +22,10 @@ const Index = ({ history }) => {
             <span
               id="customToolTip"
               className="hoverClass"
-              onClick={(e) => changeRoute("/dragndrop")}
+              onClick={(e) => changeRoute('/dragndrop')}
             >
-              {" "}
-              DragNDrop{" "}
+              {' '}
+              DragNDrop{' '}
             </span>
             <span className="descriptionText">Dummy text for tooltip</span>
             <br />
@@ -33,21 +33,21 @@ const Index = ({ history }) => {
             <br />
 
             <li>
-              <a className="hoverClass" onClick={(e) => changeRoute("/game")}>
-                {" "}
-                GameComp{" "}
+              <a className="hoverClass" onClick={(e) => changeRoute('/game')}>
+                {' '}
+                GameComp{' '}
               </a>
             </li>
             <li>
-              <a className="hoverClass" onClick={(e) => changeRoute("/wrap")}>
-                {" "}
-                WrapperComponent{" "}
+              <a className="hoverClass" onClick={(e) => changeRoute('/wrap')}>
+                {' '}
+                WrapperComponent{' '}
               </a>
             </li>
             <li>
-              <a className="hoverClass" onClick={(e) => changeRoute("/hooks")}>
-                {" "}
-                CustomHooks{" "}
+              <a className="hoverClass" onClick={(e) => changeRoute('/hooks')}>
+                {' '}
+                CustomHooks{' '}
               </a>
             </li>
             <li>
@@ -56,97 +56,97 @@ const Index = ({ history }) => {
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useState")}
+                    onClick={(e) => changeRoute('/useState')}
                   >
-                    {" "}
-                    UseState{" "}
+                    {' '}
+                    UseState{' '}
                   </a>
                 </li>
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useReducer")}
+                    onClick={(e) => changeRoute('/useReducer')}
                   >
-                    {" "}
-                    UseReducer{" "}
+                    {' '}
+                    UseReducer{' '}
                   </a>
                 </li>
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useEffect")}
+                    onClick={(e) => changeRoute('/useEffect')}
                   >
-                    {" "}
-                    UseEffect{" "}
+                    {' '}
+                    UseEffect{' '}
                   </a>
                 </li>
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useRef")}
+                    onClick={(e) => changeRoute('/useRef')}
                   >
-                    {" "}
-                    UseRef{" "}
+                    {' '}
+                    UseRef{' '}
                   </a>
                 </li>
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useLayoutEffect")}
+                    onClick={(e) => changeRoute('/useLayoutEffect')}
                   >
-                    {" "}
-                    UseLayoutEffect{" "}
+                    {' '}
+                    UseLayoutEffect{' '}
                   </a>
                 </li>
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useImperativeHandle")}
+                    onClick={(e) => changeRoute('/useImperativeHandle')}
                   >
-                    {" "}
-                    UseImperativeHandle{" "}
+                    {' '}
+                    UseImperativeHandle{' '}
                   </a>
                 </li>
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useContext")}
+                    onClick={(e) => changeRoute('/useContext')}
                   >
-                    {" "}
-                    UseContext{" "}
+                    {' '}
+                    UseContext{' '}
                   </a>
                 </li>
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useMemo")}
+                    onClick={(e) => changeRoute('/useMemo')}
                   >
-                    {" "}
-                    UseMemo{" "}
+                    {' '}
+                    UseMemo{' '}
                   </a>
                 </li>
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/useCallBack")}
+                    onClick={(e) => changeRoute('/useCallBack')}
                   >
-                    {" "}
-                    UseCallBack{" "}
+                    {' '}
+                    UseCallBack{' '}
                   </a>
                 </li>
               </ul>
             </li>
 
             <li>
-              <a className="hoverClass" onClick={(e) => changeRoute("/styled")}>
-                {" "}
-                Styled Component{" "}
+              <a className="hoverClass" onClick={(e) => changeRoute('/styled')}>
+                {' '}
+                Styled Component{' '}
               </a>
             </li>
             <li>
               <a
                 className="hoverClass"
-                onClick={(e) => changeRoute("/counter")}
+                onClick={(e) => changeRoute('/counter')}
               >
                 Counter
               </a>
@@ -154,7 +154,7 @@ const Index = ({ history }) => {
             <li>
               <a
                 className="hoverClass"
-                onClick={(e) => changeRoute("/react-memo")}
+                onClick={(e) => changeRoute('/react-memo')}
               >
                 React memo
               </a>
@@ -165,7 +165,7 @@ const Index = ({ history }) => {
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/interview-xc")}
+                    onClick={(e) => changeRoute('/interview-xc')}
                   >
                     XC
                   </a>
@@ -173,7 +173,7 @@ const Index = ({ history }) => {
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/interview-inventiv")}
+                    onClick={(e) => changeRoute('/interview-inventiv')}
                   >
                     Inventiv-5/4/22
                   </a>
@@ -181,7 +181,7 @@ const Index = ({ history }) => {
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/interview-dragNdrop")}
+                    onClick={(e) => changeRoute('/interview-dragNdrop')}
                   >
                     dragNdrop
                   </a>
@@ -191,7 +191,7 @@ const Index = ({ history }) => {
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/hoc-study")}
+                    onClick={(e) => changeRoute('/hoc-study')}
                   >
                     HOC
                   </a>
@@ -201,7 +201,7 @@ const Index = ({ history }) => {
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/render-props")}
+                    onClick={(e) => changeRoute('/render-props')}
                   >
                     Render Props
                   </a>
@@ -211,7 +211,7 @@ const Index = ({ history }) => {
                 <li>
                   <a
                     className="hoverClass"
-                    onClick={(e) => changeRoute("/binary-tree")}
+                    onClick={(e) => changeRoute('/binary-tree')}
                   >
                     Binary Tree
                   </a>
@@ -220,14 +220,14 @@ const Index = ({ history }) => {
             </li>
           </ul>
           <li>
-            <a className="hoverClass" onClick={(e) => changeRoute("/axios")}>
+            <a className="hoverClass" onClick={(e) => changeRoute('/axios')}>
               Axios
             </a>
           </li>
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/coding-interview")}
+              onClick={(e) => changeRoute('/coding-interview')}
             >
               Coding interview of click
             </a>
@@ -235,20 +235,20 @@ const Index = ({ history }) => {
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/tree-structure")}
+              onClick={(e) => changeRoute('/tree-structure')}
             >
               Coding interview of displaying tree structure
             </a>
           </li>
           <li>
-            <a className="hoverClass" onClick={(e) => changeRoute("/synonym")}>
+            <a className="hoverClass" onClick={(e) => changeRoute('/synonym')}>
               Coding interview for finding synonym word
             </a>
           </li>
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/permission")}
+              onClick={(e) => changeRoute('/permission')}
             >
               Coding interview for read,write,delete
             </a>
@@ -256,7 +256,7 @@ const Index = ({ history }) => {
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/starship-list")}
+              onClick={(e) => changeRoute('/starship-list')}
             >
               Coding interview to display starship
             </a>
@@ -264,7 +264,7 @@ const Index = ({ history }) => {
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/rating-component")}
+              onClick={(e) => changeRoute('/rating-component')}
             >
               Rating Component
             </a>
@@ -272,7 +272,7 @@ const Index = ({ history }) => {
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/useLocalStorage")}
+              onClick={(e) => changeRoute('/useLocalStorage')}
             >
               useLocalStorage
             </a>
@@ -280,7 +280,7 @@ const Index = ({ history }) => {
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/useDebounce")}
+              onClick={(e) => changeRoute('/useDebounce')}
             >
               useDebounce
             </a>
@@ -288,25 +288,25 @@ const Index = ({ history }) => {
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/useHistory")}
+              onClick={(e) => changeRoute('/useHistory')}
             >
               useHistory
             </a>
           </li>
           <li>
-            <a className="hoverClass" onClick={(e) => changeRoute("/listView")}>
+            <a className="hoverClass" onClick={(e) => changeRoute('/listView')}>
               List View
             </a>
           </li>
           <li>
-            <a className="hoverClass" onClick={(e) => changeRoute("/carousel")}>
+            <a className="hoverClass" onClick={(e) => changeRoute('/carousel')}>
               Carousel View
             </a>
           </li>
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/ticTacToe")}
+              onClick={(e) => changeRoute('/ticTacToe')}
             >
               Tic Tac Toe
             </a>
@@ -314,7 +314,7 @@ const Index = ({ history }) => {
           <li>
             <a
               className="hoverClass"
-              onClick={(e) => changeRoute("/pagination")}
+              onClick={(e) => changeRoute('/pagination')}
             >
               Pagination
             </a>
@@ -322,7 +322,7 @@ const Index = ({ history }) => {
         </section>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

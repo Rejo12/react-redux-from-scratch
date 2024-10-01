@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const Container = styled.div`
   height: 100vh;
   padding: 17rem 3rem;
 
   &::before {
-    content: "";
+    content: '';
     background: url(./bg1.jpg) no-repeat center center/cover;
     position: absolute;
     top: 80px;
@@ -16,23 +16,23 @@ const Container = styled.div`
     opacity: 0.65;
     z-index: -1;
   }
-`;
+`
 
 export default class ErrorBoundary extends React.Component {
   constructor() {
-    super();
-    this.state = { hasError: false, error: null, errorStack: null };
+    super()
+    this.state = { hasError: false, error: null, errorStack: null }
   }
 
   static getDerivedStateFromError(error) {
     if (error) {
-      return { hasError: true, error: error.toString() };
+      return { hasError: true, error: error.toString() }
     }
   }
 
   componentDidCatch(error, errorInfo) {
     if (error) {
-      this.setState({ errorStack: errorInfo.componentStack });
+      this.setState({ errorStack: errorInfo.componentStack })
     }
   }
 
@@ -46,8 +46,8 @@ export default class ErrorBoundary extends React.Component {
             <p>{this.state.errorStack}</p>
           </div>
         </Container>
-      );
+      )
     }
-    return <>{this.props.children}</>;
+    return <>{this.props.children}</>
   }
 }
