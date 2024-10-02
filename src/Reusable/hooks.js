@@ -3,6 +3,7 @@ import axios from 'axios'
 
 export const createNewState = (input, fieldsRequired = [], shape) => {
   const [newState, setNewState] = useState(shape)
+  const tmp = []
   useEffect(() => {
     let tmp = {}
     fieldsRequired.forEach((item) => {
