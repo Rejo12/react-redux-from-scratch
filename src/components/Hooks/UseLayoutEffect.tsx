@@ -1,12 +1,17 @@
 import React, { useLayoutEffect, useEffect, useRef } from 'react'
 
 const LayoutEffectHook = () => {
-  const inputRef = useRef(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   useLayoutEffect(() => {
-    console.log(inputRef.current.value)
+    if (inputRef.current) {
+      console.log('layout effect', inputRef.current.value)
+    }
   }, [])
   useEffect(() => {
-    inputRef.current.value = 'Hello'
+    if (inputRef.current) {
+      console.log('use  effect', inputRef.current.value)
+      inputRef.current.value = 'Hello'
+    }
   }, [])
   return (
     <div className="app">

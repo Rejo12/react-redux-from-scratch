@@ -1,15 +1,33 @@
 import React, { useReducer, useState } from 'react'
 import ToDoList from './ToDoList'
+import { toDoProps, toDoActionProps } from './TypeHooks/types'
 
 export const ACTIONS = {
   SAVE: 'SAVE',
   TOGGLE: 'TOGGLE',
 }
 
-const reducer = (state, action) => {
+type reducerProps = {
+  count: number
+  showText: boolean
+}
+
+type reducerActionProps = {
+  type: 'INCREMENT'
+  payload: number
+}
+
+type reducerActionTypeProps = {
+  type: 'TOGGLE'
+}
+
+type receivedReducerProps = reducerActionProps | reducerActionTypeProps
+
+const reducer = (state: reducerProps, action: receivedReducerProps) => {
   switch (action.type) {
     case 'INCREMENT':
-      return { count: state.count + action.payload, showText: state.showText }
+      if (action.payload)
+        return { count: state.count + action.payload, showText: state.showText }
     case 'TOGGLE':
       return { count: state.count, showText: !state.showText }
     default:
@@ -17,20 +35,21 @@ const reducer = (state, action) => {
   }
 }
 
-const todoReducer = (state, action) => {
+const todoReducer = (state: toDoProps[], action: toDoActionProps) => {
   switch (action.type) {
-    case ACTIONS.SAVE: {
+    case 'SAVE': {
       let obj = { id: Date.now(), value: action.payload, disabled: false }
       return [...state, obj]
     }
 
-    case ACTIONS.TOGGLE:
-      return state.map((item) => {
-        if (item.id === action.payload.id) {
-          return { ...item, disabled: !item.disabled }
-        } else {
-          return item
-        }
+    case 'TOGGLE':
+      console.log('57', action.payload)
+      return state.map((item: toDoProps) => {
+        // if (item.id === action.payload.id) {
+        //   return { ...item, disabled: !item.disabled }
+        // } else {
+        return item
+        // }
       })
 
     default:
@@ -42,13 +61,17 @@ const ReducerHook = () => {
   const initialState = { count: 0, showText: true }
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const intitalToDoState = []
+  const intitalToDoState: toDoProps[] = []
   const [todoName, setToDoName] = useState('')
   const [todoState, todoDispatch] = useReducer(todoReducer, intitalToDoState)
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     todoDispatch({ type: ACTIONS.SAVE, payload: todoName })
     setToDoName('')
+  }
+
+  const todoDispatchHandler = (data: toDoActionProps) => {
+    todoDispatch(data)
   }
   console.log({ todoState })
   return (
@@ -72,8 +95,12 @@ const ReducerHook = () => {
           value={todoName}
         />
         <button onClick={handleClick}>Save</button>
-        {todoState.map((item) => (
-          <ToDoList item={item} key={item.id} dispatch={todoDispatch} />
+        {todoState.map((item: toDoProps) => (
+          <ToDoList
+            item={item}
+            key={item.id}
+            dispatchToDo={todoDispatchHandler}
+          />
         ))}
       </div>
     </>

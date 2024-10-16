@@ -1,10 +1,12 @@
 import React, { useRef } from 'react'
 
 const RefHook = () => {
-  const inputRef = useRef(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   const setFocus = () => {
     // console.log(inputRef.current)
-    inputRef.current.focus()
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
   }
   const handleChange = () => {
     console.log('e.target.value')
@@ -19,7 +21,7 @@ const RefHook = () => {
         ref={inputRef}
         onChange={handleChange}
       />
-      <button onClick={setFocus}>Change name</button>
+      <button onClick={setFocus}>Set Focus</button>
     </div>
   )
 }

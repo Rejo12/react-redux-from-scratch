@@ -1,14 +1,20 @@
 import React, { useRef } from 'react'
 import Button from './Button'
 
+type buttonRefProp = {
+  alterToggle: () => void
+  testvalue: string
+}
+
 const ImperativeHandleHook = () => {
-  const buttonRef = useRef(null)
+  const buttonRef = useRef<buttonRefProp>(null)
 
   return (
     <div>
       <button
         onClick={() => {
-          buttonRef.current.alterToggle()
+          if (buttonRef.current)
+            if (buttonRef.current.alterToggle) buttonRef.current.alterToggle()
         }}
       >
         Button from parent

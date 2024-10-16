@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const EffectHook = () => {
-  const [data, setData] = useState('')
-  const [count, setCount] = useState(0)
-  const [windowWidth, setWindowWidth] = useState(null)
+  const [data, setData] = useState<string>('')
+  const [count, setCount] = useState<number>(0)
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
 
   useEffect(() => {
     console.log('render from [count] useEffect', count)
@@ -26,7 +26,7 @@ const EffectHook = () => {
     }
   }, [])
 
-  const handleResize = () => {
+  const handleResize = (): void => {
     console.log({ window })
     setWindowWidth(window.innerWidth)
   }

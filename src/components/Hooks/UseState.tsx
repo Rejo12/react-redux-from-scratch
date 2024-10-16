@@ -6,7 +6,7 @@ const getInitialValue = () => {
 }
 const StateHooks = () => {
   const [inputValue, setInputValue] = useState(getInitialValue())
-  console.log('dfghj')
+  let a: number = 2
   return (
     <>
       <input
