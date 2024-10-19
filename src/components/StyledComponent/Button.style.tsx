@@ -1,12 +1,20 @@
 import styled from 'styled-components'
-import ButtonComp from './ButtonComp'
+import ButtonComp, { buttonCompProps } from './ButtonComp'
+
+type buttonProps = {
+  backgroundColor: string
+}
+
+type styledButtonProps = Omit<buttonCompProps, 'className'> & {
+  backgroundColor: string
+}
 
 export const Button = styled.button`
   width: 200px;
   height: 50px;
   display: inline-block;
   margin: 0 1rem;
-  background: ${(props) => props.backgroundColor};
+  background: ${(props: buttonProps) => props.backgroundColor};
 
   &:hover {
     background: coral;
@@ -25,5 +33,5 @@ export const ButtonLabel = styled.label`
 export const StyledButton = styled(ButtonComp)`
   width: 200px;
   height: 100px;
-  background: ${(props) => props.backgroundColor};
+  background: ${(props: styledButtonProps) => props.backgroundColor};
 `

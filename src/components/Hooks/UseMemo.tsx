@@ -1,8 +1,16 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import axios from 'axios'
 
+type commentsProps = {
+  postId: number
+  id: number
+  name: string
+  email: string
+  body: string
+}
+
 const MemoHook = () => {
-  const [data, setData] = useState('')
+  const [data, setData] = useState<commentsProps[]>([])
   const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
@@ -14,7 +22,7 @@ const MemoHook = () => {
       })
   }, [])
 
-  const findLongestName = (comments) => {
+  const findLongestName = (comments: commentsProps[]) => {
     // console.log("comments",comments)
     if (comments.length > 0) {
       let longestName = ''
@@ -45,7 +53,7 @@ const Memo = () => {
   const changeTheme = () => {
     setDark((prevDark) => !prevDark)
   }
-  const doubleNumber = (num) => {
+  const doubleNumber = (num: number) => {
     console.log('slow functions')
     // for (var i = 0; i < 1000000000; i++) {}
     return num * 2
@@ -60,7 +68,7 @@ const Memo = () => {
       <input
         type="number"
         value={number}
-        onChange={(e) => setNumber(e.target.value)}
+        onChange={(e) => setNumber(parseInt(e.target.value))}
       />
       <br />
       <button onClick={(e) => changeTheme()}>Change theme</button>

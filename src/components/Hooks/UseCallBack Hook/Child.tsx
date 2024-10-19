@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react'
 
-const Child = ({ returnComment }) => {
+type childCompProps = {
+  returnComment: () => string
+}
+
+const Child = ({ returnComment }: childCompProps) => {
   useEffect(() => {
     console.log('useeffect')
   }, [returnComment])

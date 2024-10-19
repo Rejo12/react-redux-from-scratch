@@ -1,12 +1,22 @@
 import React from 'react'
 
-export default class Counter extends React.Component {
-  constructor() {
-    super()
+type CounterStateProps = {
+  count: number
+  clicked: number
+}
+
+type CounterProps = {}
+
+export default class Counter extends React.Component<
+  CounterProps,
+  CounterStateProps
+> {
+  constructor(props: CounterProps) {
+    super(props)
     this.state = { count: 0, clicked: 0 }
   }
   componentDidMount() {
-    let timer
+    let timer: any
     let i = 0
     timer = setInterval(() => {
       i++
@@ -14,7 +24,7 @@ export default class Counter extends React.Component {
     }, 1000)
   }
 
-  updateCounter(i, timer) {
+  updateCounter(i: number, timer: any) {
     if (i < 11) {
       this.setState((prevState) => ({
         count: prevState.count + 1,
@@ -31,7 +41,7 @@ export default class Counter extends React.Component {
   //     clicked: prevState.clicked + 1,
   //   }));
   // };
-  handleClick(a, b, c) {
+  handleClick(a: number, b: number, c: number) {
     // const foo = [];
     // for (var i = 0; i < 3; i++) {
     //   (function () {
@@ -50,7 +60,7 @@ export default class Counter extends React.Component {
     }
   }
   render() {
-    const list = [1, 2, 4, 5]
+    const list: [number, number, number] = [1, 2, 4]
     return (
       <div>
         Count is:<b> {this.state.count}</b>
