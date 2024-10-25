@@ -1,10 +1,15 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import ChildComp from './ChildComp'
 
+type Ref = {
+  refValue: number
+  refMethod: () => string
+}
+
 const ParentComp = () => {
-  const [count, setCount] = useState(0)
-  const [childCount, setChildCount] = useState(0)
-  const childRef = useRef(null)
+  const [count, setCount] = useState<number>(0)
+  const [childCount, setChildCount] = useState<number>(0)
+  const childRef = useRef<Ref>(null)
   // useEffect(() => {
   //   childRef.current = "initialValue";
   //   console.log("childRef in effect", childRef.current);

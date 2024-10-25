@@ -8,15 +8,23 @@ const HeaderPlaceholder = styled.h4`
   background: #ebf5fffa;
   border-radius: 3px;
 `
-
+type TextPlaceholderPropType = {
+  width: string
+}
 const TextPlaceholder = styled.p`
-  width: ${(props) => props.width};
+  width: ${(props: TextPlaceholderPropType) => props.width};
   padding: 0.8rem 5rem;
   background: #ebf5fffa;
   border-radius: 3px;
 `
 
-const Skeleton = forwardRef((props, ref) => {
+type SkeletonPropType = {
+  time: null
+}
+
+type CompRef = string
+
+const Skeleton = forwardRef<CompRef, SkeletonPropType>((props, ref) => {
   const [currState, updateState] = useStateUpdate(
     props.time || 'no time available',
   )

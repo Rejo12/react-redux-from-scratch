@@ -1,8 +1,18 @@
 import React from 'react'
 
-const MsgComp = (props) => {
+type MsgListType = {
+  id: number
+  msgText: string
+}
+
+type MsgCompPropType = {
+  msgList: MsgListType[]
+  deleteSelected: (id: number) => void
+}
+
+const MsgComp = (props: MsgCompPropType) => {
   const { msgList } = props
-  const handleDelete = (item) => {
+  const handleDelete = (item: MsgListType) => {
     props.deleteSelected(item.id)
   }
   return (
@@ -12,6 +22,8 @@ const MsgComp = (props) => {
           <div key={item.id}>
             <span>{item.msgText}</span>
             <button onClick={(e) => handleDelete(item)}>Delete</button>
+            <br />
+            <br />
           </div>
         )
       })}

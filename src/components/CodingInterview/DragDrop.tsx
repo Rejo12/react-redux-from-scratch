@@ -2,19 +2,23 @@ import React from 'react'
 import { useState } from 'react'
 
 const DragDrop = () => {
-  const [widgets, setWidget] = useState([])
-  const handleOnDrag = (widgetType, e) => {
+  const [widgets, setWidget] = useState<string[]>([])
+  const handleOnDrag = (
+    widgetType: string,
+    e: React.DragEvent<HTMLDivElement>,
+  ) => {
     e.dataTransfer.setData('widgetType', widgetType)
   }
-  const handleDragOver = (e) => {
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
   }
 
-  const handleDrop = (e) => {
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     const widget = e.dataTransfer.getData('widgetType')
-    console.log({ widget })
+    // console.log({ widget })
     setWidget([...widgets, widget])
   }
+  console.log({ widgets })
   return (
     <>
       <div

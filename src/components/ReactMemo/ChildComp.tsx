@@ -2,7 +2,19 @@
 // eslint-disable-next-line no-unused-vars
 import React, { memo, useEffect, forwardRef, useImperativeHandle } from 'react'
 
-const ChildComp = forwardRef((props, ref) => {
+type ChildCompProps = {
+  value: number
+  incChildCount: () => void
+  key: number
+  id: number
+}
+
+type Ref = {
+  refValue: number
+  refMethod: () => string
+}
+
+const ChildComp = forwardRef<Ref, ChildCompProps>((props, ref) => {
   useEffect(() => {
     console.log('useEffect', props)
   })
@@ -19,7 +31,7 @@ const ChildComp = forwardRef((props, ref) => {
   console.log(props, ref)
   return (
     <>
-      <hr style={{ backgroundColor: '#fff' }} ref={ref} />
+      <hr style={{ backgroundColor: '#fff' }} />
       Child Component : {childCount}
       <div>
         <button onClick={() => incChildCount()}>Child button</button>

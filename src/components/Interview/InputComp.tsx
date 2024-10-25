@@ -1,9 +1,18 @@
 import React, { useState } from 'react'
 
-const InputComp = (props) => {
+type MsgListType = {
+  id: number
+  msgText: string
+}
+
+type InputCompPropType = {
+  saveMsg: (item: MsgListType) => void
+}
+
+const InputComp = (props: InputCompPropType) => {
   const [msgText, setMsgText] = useState('')
   const [id, setId] = useState(0)
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMsgText(e.target.value)
   }
 

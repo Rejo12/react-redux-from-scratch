@@ -13,7 +13,21 @@ const MyStyles = styled.div`
     color: #00fffa;
   }
 `
-export default function HocComponent(InputComponent, props) {
+
+interface MyProps<T> {
+  classes: any
+  handleClick: () => void
+  currTime: null
+}
+
+type BaseCompPropType = {
+  currTime: null
+  handleClick: () => void
+}
+
+type InputComponentProp = (prop: BaseCompPropType) => React.JSX.Element
+
+export default function HocComponent(InputComponent: InputComponentProp) {
   return class extends React.Component {
     state = { currTime: null }
     updateTime() {
@@ -33,12 +47,12 @@ export default function HocComponent(InputComponent, props) {
       })
     }
     render() {
-      //   console.log(InputComponent, props);
+      console.log('37', InputComponent)
       const customStyle = { color: 'red !important' }
       return (
         <MyStyles>
           <InputComponent
-            handleClick={(e) => this.updateTime()}
+            handleClick={() => this.updateTime()}
             currTime={this.state.currTime}
             // style={{ display: "none" }}
           />

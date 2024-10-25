@@ -3,8 +3,42 @@ import { connect } from 'react-redux'
 import Child1 from './Child1'
 import Child2 from './Child2'
 import fetchInterviewData from '../../Action.js/InterviewAction'
+import { useProps } from '@mui/x-data-grid/internals'
 
-class ParentComp extends React.Component {
+type userProp = {
+  id: number
+  name: string
+  username: string
+  email: string
+  address: {
+    street: string
+    suite: string
+    city: string
+    zipcode: string
+    geo: {
+      lat: string
+      lng: string
+    }
+  }
+  phone: string
+  website: string
+  company: {
+    name: string
+    catchPhrase: string
+    bs: string
+  }
+}
+
+type ParentCompProps = {
+  fetchInterviewData: () => void
+  interviewData: userProp[]
+}
+
+type ParentCompState = {
+  selectedData: null | userProp
+}
+
+class ParentComp extends React.Component<ParentCompProps, ParentCompState> {
   state = {
     selectedData: null,
   }
@@ -12,7 +46,7 @@ class ParentComp extends React.Component {
     this.props.fetchInterviewData()
   }
 
-  customPromise(time, type) {
+  customPromise(time: number, type: string) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         console.log('promise log')
@@ -20,7 +54,8 @@ class ParentComp extends React.Component {
       }, time)
     })
   }
-  saveData = async (item) => {
+  saveData = async (item: userProp) => {
+    console.log({ item })
     const p1 = await this.customPromise(2000, '2000')
     console.log('1st log')
     const p2 = await this.customPromise(5000, '5000')
@@ -32,7 +67,7 @@ class ParentComp extends React.Component {
     })
   }
   render() {
-    // console.log(this.props.interviewData);
+    console.log(this.props.interviewData)
     return (
       <>
         <Child1
@@ -45,11 +80,11 @@ class ParentComp extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   interviewData: state.interviewReducer.fetchedData,
 })
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
   return {
     fetchInterviewData: () => {
       dispatch(fetchInterviewData())
