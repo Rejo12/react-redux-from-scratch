@@ -1,11 +1,26 @@
 import React, { useState } from 'react'
 import Api from '../../Api'
 
+type RequestTypes = 'get' | 'put' | 'post' | 'delete'
+
+type ResultType = {
+  body: string
+  id: number
+  title: string
+  userId: number
+}[]
+
+type ServerResponse = {
+  data: ResultType
+}
+
 const Display = () => {
-  const [response, setResponse] = useState(null)
+  const [response, setResponse] = useState<ServerResponse>(
+    null as unknown as ServerResponse,
+  )
   const [error, setError] = useState(null)
   const apiConnector = new Api()
-  const handleRequest = (type) => {
+  const handleRequest = (type: RequestTypes) => {
     let result
     if (type === 'get') {
       result = apiConnector.getPosts()
@@ -14,29 +29,31 @@ const Display = () => {
         title: 'New post',
         body: 'Post saved to check the response.',
       }
-      result = apiConnector.savePosts(reqBody)
+      apiConnector.savePosts(reqBody)
     } else if (type === 'put') {
       let reqBody = {
         title: 'Updated post',
         body: 'Post updates.',
       }
-      result = apiConnector.updatePost(reqBody)
+      apiConnector.updatePost(reqBody)
     } else if (type === 'delete') {
-      result = apiConnector.deletePost()
+      apiConnector.deletePost()
     } else {
       console.error('Invalid type')
     }
-    result
-      .then((value) => {
-        if (value.data) {
-          console.log('value.data', value.data)
-          setResponse(value.data)
-        }
-      })
-      .catch((err) => {
-        console.log(err.message)
-        setError(err.message)
-      })
+    if (result) {
+      result
+        .then((value) => {
+          if (value.data) {
+            console.log('value.data', value.data)
+            setResponse(value.data)
+          }
+        })
+        .catch((err) => {
+          console.log(err.message)
+          setError(err.message)
+        })
+    }
   }
   console.table(response)
   return (

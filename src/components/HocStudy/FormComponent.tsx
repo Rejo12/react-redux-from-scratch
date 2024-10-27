@@ -1,13 +1,22 @@
 import React from 'react'
 import RenderPropComponent from './RenderPropComponent'
 
+type CompStateType = {
+  fName: string
+  lName: string
+  email: string
+  mobileNumber: string
+}
+
+type handleChangeType = (value: string, fieldName: string) => void
+
 const FormComponent = () => {
-  const handleSave = (data) => {
+  const handleSave = (data: CompStateType) => {
     console.log('data to save', data)
   }
   return (
     <RenderPropComponent
-      render={(handleChange, compState) => (
+      render={(handleChange: handleChangeType, compState: CompStateType) => (
         <div>
           <label>First name: </label>
           <input
