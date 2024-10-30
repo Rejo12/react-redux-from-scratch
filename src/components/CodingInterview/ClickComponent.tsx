@@ -4,10 +4,17 @@
 
 import React, { useState, Fragment } from 'react'
 
+type coordinatesArrayType = {
+  x: number
+  y: number
+}
+
 const ClickComponent = () => {
-  const [coordinatesArray, setCoordinatesArray] = useState([])
+  const [coordinatesArray, setCoordinatesArray] = useState<
+    coordinatesArrayType[]
+  >([])
   const [backupCoordinates, setBackupCoordinates] = useState(coordinatesArray)
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     console.log(e)
     let tmpCoordinates = [...coordinatesArray]
     tmpCoordinates.push({ x: e.clientX, y: e.clientY })
@@ -39,7 +46,7 @@ const ClickComponent = () => {
       >
         Redo
       </button>
-      <div className="container-click" onClick={handleClick}>
+      <div className="container-click" onClick={(e) => handleClick(e)}>
         <p>This is the surface area for user to click</p>
         <div className="circle"></div>
         {coordinatesArray.map((item) => {

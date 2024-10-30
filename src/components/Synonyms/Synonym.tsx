@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
-import { fetchSynonyms } from './api'
 import { useGetSynonyms } from './useGetSynonyms'
 
 const Synonym = () => {
-  const [word, setWord] = useState('')
+  const [word, setWord] = useState<string>('')
   const { isFetchingSynonyms, synonyms, getSynonyms } = useGetSynonyms()
 
-  const handleFetchSynonyms = (e) => {
+  const handleFetchSynonyms = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     getSynonyms(word)
   }
-  const handleSynonymsClicked = (newWord) => {
+  const handleSynonymsClicked = (newWord: string) => {
     setWord(newWord)
     getSynonyms(newWord)
   }

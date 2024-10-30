@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import { fetchSynonyms } from './api'
 
-export const useGetSynonyms = () => {
-  const [synonyms, setSynonyms] = useState([])
-  const [isFetchingSynonyms, setIsFetchingSynonyms] = useState(false)
+type synonymsType={
+  word:string,
+  score:number
+}[]
 
-  const getSynonyms = (word) => {
+export const useGetSynonyms = () => {
+  const [synonyms, setSynonyms] = useState<synonymsType>([])
+  const [isFetchingSynonyms, setIsFetchingSynonyms] = useState<boolean>(false)
+
+  const getSynonyms = (word:string) => {
     setIsFetchingSynonyms(true)
     fetchSynonyms(word)
       .then((res) => setSynonyms(res))

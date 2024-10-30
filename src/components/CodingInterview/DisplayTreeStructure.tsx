@@ -1,5 +1,18 @@
 import React, { useState } from 'react'
 
+type subEntry = {
+  name: string
+  children?: {
+    name: string
+  }[]
+}
+
+type EntryTypes = {
+  entry: subEntry
+  depth: number
+  key: string
+}
+
 const files = {
   children: [
     {
@@ -27,7 +40,7 @@ const files = {
   ],
 }
 
-const Entry = ({ entry, depth }) => {
+const Entry = ({ entry, depth }: EntryTypes) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
     <div>
@@ -48,7 +61,7 @@ const Entry = ({ entry, depth }) => {
         <div style={{ marginLeft: `${depth * 15}px` }}>
           {entry.children?.map((item) => (
             <Entry
-              key={`${depth - item.name}`}
+              key={`${depth} - ${item.name}`}
               entry={item}
               depth={depth + 1}
             />
