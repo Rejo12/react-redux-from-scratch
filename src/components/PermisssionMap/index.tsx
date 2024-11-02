@@ -6,6 +6,15 @@ const StyledInput = styled.input`
   height: 35px;
   margin: 5px;
 `
+type dataListType =
+  | {
+      value1: boolean
+      value2?: undefined
+    }
+  | {
+      value1?: undefined
+      value2: boolean
+    }
 
 const Permission = () => {
   const [permission, setPermission] = useState([
@@ -44,10 +53,14 @@ const Permission = () => {
     },
   ])
 
-  const [dummyState, setDummyState] = useState(null)
+  const [dummyState, setDummyState] = useState<string>('')
   const [isPending, startTransition] = useTransition()
 
-  const handleChange = (type, innerItem, e) => {
+  const handleChange = (
+    type: string,
+    innerItem: dataListType,
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     //console.log(type, innerItem, e.target.checked);
     /* base condition delete is true everything is true
       delete is false everything is false
@@ -117,24 +130,25 @@ const Permission = () => {
     // }, 5000);
   }
 
-  console.log('--------render-----------', isPending, dummyState)
+  // console.log('--------render-----------', isPending, dummyState)
   return (
     <div className="permission-container">
       {permission.length > 0
         ? permission.map((item) => {
             return item.dataList.map((innerItem, index) => {
               let checkboxValue = Object.keys(innerItem)
-              //console.log("here", index);
+              // console.log("here", checkboxValue,innerItem);
               if (item.type === 'read') {
                 return (
                   <>
                     <StyledInput
-                      label={'text'}
                       type="checkbox"
                       className="permission-checkbox"
                       id={index % 2 === 0 ? 'odd' : 'even'}
                       key={`${item.type}-${index}`}
-                      checked={innerItem[checkboxValue[0]]}
+                      checked={
+                        innerItem[checkboxValue[0] as keyof dataListType]
+                      }
                       onChange={(e) => handleChange(item.type, innerItem, e)}
                     />
                   </>
@@ -142,24 +156,24 @@ const Permission = () => {
               } else if (item.type === 'write') {
                 return (
                   <StyledInput
-                    label={'text'}
                     type="checkbox"
                     className="permission-checkbox"
                     id={index % 2 === 0 ? 'odd' : 'even'}
                     key={`${item.type}-${index}`}
-                    checked={innerItem[checkboxValue[0]]}
+                    checked={
+                      innerItem[checkboxValue[0] as keyof typeof innerItem]
+                    }
                     onChange={(e) => handleChange(item.type, innerItem, e)}
                   />
                 )
               } else {
                 return (
                   <StyledInput
-                    label={'text'}
                     type="checkbox"
                     className="permission-checkbox"
                     id={index % 2 === 0 ? 'odd' : 'even'}
                     key={`${item.type}-${index}`}
-                    checked={innerItem[checkboxValue[0]]}
+                    checked={innerItem[checkboxValue[0] as keyof dataListType]}
                     onChange={(e) => handleChange(item.type, innerItem, e)}
                   />
                 )

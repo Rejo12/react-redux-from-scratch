@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelectedData } from '../../Reusable/hooks'
 
 const CardView = () => {
-  let obj = JSON.parse(sessionStorage.getItem('ship'))
+  let obj = JSON.parse(sessionStorage.getItem('ship') as string)
   return (
     <div className="">
       <p>name:{obj.name}</p>
