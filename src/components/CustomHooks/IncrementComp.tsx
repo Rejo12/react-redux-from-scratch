@@ -4,7 +4,7 @@ import useDebounce from './useDebounce'
 
 const IncrementComp = () => {
   const [count, setCount] = useState(0)
-  const [iframeUrl, setiframeUrl] = useState(null)
+  const [iframeUrl, setiframeUrl] = useState<string>(null as any as string)
   useEffect(() => {
     fetch('ChooseToBeHappy.pdf?fileId=TRANSLATE').then((response) => {
       response.blob().then((blob) => {
@@ -24,10 +24,10 @@ const IncrementComp = () => {
 
   //useCallback(useDebounce(() => alert(`Current value is ${count}`), 3000, [count]), [])
 
-  function debounce(fn) {
+  function debounce(fn: (args: []) => void) {
     // setCount(prevCount => prevCount + 1)
-    let timerId
-    return (...args) => {
+    let timerId: NodeJS.Timeout
+    return (...args: []) => {
       //  setCount(prevCount => prevCount + 1)
       if (timerId) {
         clearTimeout(timerId)

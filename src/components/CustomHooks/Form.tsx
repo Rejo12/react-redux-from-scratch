@@ -13,8 +13,11 @@ const Form = () => {
   //  const [localValue, setLocalValue] = useLocalStorage('firstName', '')
   const randomId = useId()
 
-  const handleChange = (type, e) => {
-    e.persist()
+  const handleChange = (
+    type: string,
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    // e.persist()
     console.log(e.target.value)
     if (type === 'firstName') {
       // setFirstName(e.target.value)

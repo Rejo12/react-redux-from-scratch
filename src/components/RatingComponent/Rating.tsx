@@ -4,13 +4,15 @@ import Number from './NumberComponent'
 // import star from './images/icon-star.svg'
 
 const Rating = () => {
-  const [selectedRating, setSelectedRating] = useState(null)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const list = [1, 2, 3, 4, 5]
-  const handleselectedRating = (value) => {
+  const [selectedRating, setSelectedRating] = useState<number>(
+    null as any as number,
+  )
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
+  const list: number[] = [1, 2, 3, 4, 5]
+  const handleselectedRating = (value: number): void => {
     setSelectedRating(value)
   }
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     setIsSubmitted(true)
   }
   return (
