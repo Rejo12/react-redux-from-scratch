@@ -1,6 +1,32 @@
 import React from 'react'
 
-function Node({ data, depth, pos }) {
+type rootType = {
+  value: number
+  left?: {
+    value: number
+    left?: {
+      value: number
+    }
+    right?: {
+      value: number
+    }
+  }
+  right?: {
+    value: number
+  }
+}
+
+type depthType = number
+
+type posType = string
+
+type NodeProp = {
+  data: rootType
+  depth: depthType
+  pos?: posType
+}
+
+function Node({ data, depth, pos }: NodeProp) {
   let newDepth = depth + 1
   let leftPos = pos === 'left' ? newDepth * 2.5 : newDepth * 5
   console.log(depth, data.value)

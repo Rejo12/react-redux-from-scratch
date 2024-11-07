@@ -21,16 +21,22 @@ export function* fetchInterviewData() {
 // }
 
 export function* fethcPostsSaga() {
-  let response = yield call(Api.getPosts)
-  console.log('41', response)
+  try {
+    const newApi = new Api()
+    let response = yield call(newApi.getPosts)
+    console.log('41', response)
 
-  yield put(fetchPostsDone(response.data))
+    yield put(fetchPostsDone(response.data))
+  } catch (e) {
+    console.log({ e })
+  }
 }
 
 export function* fetchPostByIdSaga(action) {
   try {
+    const newApi = new Api()
     const { payload } = action
-    let response = yield call(Api.getPostById, payload)
+    let response = yield call(newApi.getPostById, payload)
     yield put(fetchPostByIdDone(response.data))
     console.log({ response })
   } catch (e) {}

@@ -1,6 +1,8 @@
 import React, { useEffect, useContext } from 'react'
 import { DataGrid } from '@mui/x-data-grid'
+import type { GridTreeNode, GridCellParams } from '@mui/x-data-grid'
 import { connect } from 'react-redux'
+import { RouteComponentProps } from 'react-router-dom'
 import { fetchPosts } from '../../Action.js/InterviewAction'
 import ModeEditOutlineSharpIcon from '@mui/icons-material/ModeEditOutlineSharp'
 import columns, { rowFormatter } from './column'
@@ -29,7 +31,19 @@ import { ThemeContext } from '../../RouteComponent'
 
 // ];
 
-const List = (props) => {
+type PostType = {
+  body: string
+  id: number
+  title: string
+  userId: number
+}
+
+type ListProps = RouteComponentProps & {
+  posts: PostType[]
+  fetchPosts: () => void
+}
+
+const List = (props: ListProps) => {
   const { currentTheme, setCurrentTheme } = useContext(ThemeContext)
 
   useEffect(() => {
@@ -39,7 +53,9 @@ const List = (props) => {
 
   const rows = props.posts.map((item) => rowFormatter(item))
   console.log({ rows })
-  const cellClicked = (value) => {
+  const cellClicked = (
+    value: GridCellParams<any, unknown, unknown, GridTreeNode>,
+  ) => {
     console.log({ value })
     props.history.push(`/post/${value.row.id}`)
   }
@@ -52,9 +68,9 @@ const List = (props) => {
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={1}
+        // pageSize={1}
         // autoPageSize={true}
-        rowsPerPageOptions={4}
+        // rowsPerPageOptions={4}
         // checkboxSelection
         density="standard"
         // loading
@@ -64,11 +80,11 @@ const List = (props) => {
   )
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   posts: state.interviewReducer.posts,
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: any) => ({
   fetchPosts: () => {
     dispatch(fetchPosts())
   },

@@ -3,9 +3,9 @@ import { useState } from 'react'
 import useHistory from './useHistory'
 
 const Pointer = () => {
-  const [count, setCount] = useState(1)
-  const [pointer, setPointer] = useState(0)
-  const [history, setHistory, fetchPointer] = useHistory(count)
+  const [count, setCount] = useState<number>(1)
+  const [pointer, setPointer] = useState<number>(0)
+  const { history, setHistory, fetchPointer } = useHistory(count)
   const handleIncrement = () => {
     setHistory(history.concat(count + 2))
     setPointer(history.length)
