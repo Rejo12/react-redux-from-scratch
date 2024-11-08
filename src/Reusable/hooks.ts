@@ -1,15 +1,27 @@
 import { useState, useEffect } from 'react'
 import axios, { AxiosResponse } from 'axios'
 
-export const createNewState = (input, fieldsRequired = [], shape) => {
-  const [newState, setNewState] = useState(shape)
+type SelectedPostType = {
+  body:string,
+  id:number,
+  title:string,
+  userId:number
+  }
+
+  type NewStateType={
+    title:string,
+    body:string
+  }
+
+export const createNewState = (input:SelectedPostType|{}, fieldsRequired:string[] = [], shape:{}) => {
+  const [newState, setNewState] = useState<NewStateType>(shape as NewStateType)
   const tmp = []
   useEffect(() => {
     let tmp = {}
     fieldsRequired.forEach((item) => {
       //   console.log({ input });
       if (Object.keys(input).length > 0) {
-        if (Object.hasOwn(input, item)) {
+        if (Object.hasOwnProperty(item)) {
           console.log('here', input, item, newState)
           tmp[item] = input[item] ?? 'missing value'
         }
@@ -19,7 +31,7 @@ export const createNewState = (input, fieldsRequired = [], shape) => {
   }, [input.id])
 
   //   console.log({ newState });
-  return [newState, setNewState]
+  return {newState, setNewState}
 }
 
 type StarShipType={

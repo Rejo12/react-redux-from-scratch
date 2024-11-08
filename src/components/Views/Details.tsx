@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useParams, useLocation, useNav } from 'react-router-dom'
+import { useParams, useLocation, RouteComponentProps } from 'react-router-dom'
 import { connect } from 'react-redux'
 import queryString from 'query-string'
 import {
@@ -8,12 +8,25 @@ import {
 } from '../../Action.js/InterviewAction'
 import { createNewState } from '../../Reusable/hooks'
 
-const Details = (props) => {
-  const params = useParams()
+type SelectedPostType = {
+  body: string
+  id: number
+  title: string
+  userId: number
+}
+
+type DetailsPropType = RouteComponentProps & {
+  selectedPost: SelectedPostType
+  fetchPostById: (postId: string) => void
+  clearSelectedPost: () => void
+}
+
+const Details = (props: DetailsPropType) => {
+  const params = useParams<{ postId: string }>()
   const location = useLocation()
   //console.log({ newState })
   // console.log({ props })
-  const [newState, setNewState] = createNewState(
+  const { newState, setNewState } = createNewState(
     props.selectedPost || {},
     ['title', 'body'],
     {},
@@ -24,8 +37,12 @@ const Details = (props) => {
       props.clearSelectedPost()
     }
   }, [])
+  console.log({ params })
 
-  const handleChange = (field, e) => {
+  const handleChange = (
+    field: string,
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     console.log('key pressed', e.target.value)
     setNewState({ ...newState, [field]: e.target.value })
   }
@@ -84,7 +101,7 @@ const Details = (props) => {
 // const ma
 
 export default connect(
-  (state) => {
+  (state: any) => {
     return {
       selectedPost: state.interviewReducer.selectedPost,
     }

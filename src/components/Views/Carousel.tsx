@@ -17,7 +17,7 @@ let input = [
 ]
 const Carousel = () => {
   const [inputList, setInputList] = useState(input)
-  const [timerId, setTimerId] = useState(null)
+  const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null)
   const [mainImageIndex, setMainImageIndex] = useState(0)
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Carousel = () => {
     // setMainImageIndex(1)
   }, [])
 
-  const handleNav = (direction) => {
+  const handleNav = (direction: string) => {
     handlePause()
     if (direction === 'back') {
       let newImageIndex =

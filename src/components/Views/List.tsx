@@ -52,7 +52,6 @@ const List = (props: ListProps) => {
   console.log('props', props)
 
   const rows = props.posts.map((item) => rowFormatter(item))
-  console.log({ rows })
   const cellClicked = (
     value: GridCellParams<any, unknown, unknown, GridTreeNode>,
   ) => {

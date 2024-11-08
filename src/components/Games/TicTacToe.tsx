@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-function generateBoard(size) {
+function generateBoard(size: number) {
   const board = []
   for (let i = 0; i < size; i++) {
-    board.push(new Array(size).fill())
+    board.push(new Array(size).fill(undefined))
   }
   return board
 }
@@ -11,7 +11,7 @@ function generateBoard(size) {
 function TicTacToe() {
   const [board, setBoard] = useState(generateBoard(3))
   const [currUser, setCurrUser] = useState('x')
-  const handleClick = (r, c) => {
+  const handleClick = (r: number, c: number) => {
     console.log(r, c)
     let tmp = [...board]
     tmp[r][c] = currUser
@@ -55,13 +55,13 @@ function TicTacToe() {
 
     // diagonally
 
-    let diagonalArr = [[], []]
+    let diagonalArr: [string[], string[]] = [[], []]
     for (let i = 0; i < board.length; i++) {
       diagonalArr[0].push(board[i][i])
       if (diagonalArr[0].length === board.length) {
         let symbols = new Set(diagonalArr[0])
         // console.log(symbols)
-        if (symbols.size === 1 && !symbols.has(undefined)) {
+        if (symbols.size === 1 && !symbols.has(undefined as any as string)) {
           return true
         }
       }
@@ -73,7 +73,7 @@ function TicTacToe() {
       if (diagonalArr[1].length === board.length) {
         let symbols = new Set(diagonalArr[1])
         // console.log(symbols)
-        if (symbols.size === 1 && !symbols.has(undefined)) {
+        if (symbols.size === 1 && !symbols.has(undefined as any as string)) {
           return true
         }
       }
