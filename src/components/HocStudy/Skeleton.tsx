@@ -25,7 +25,7 @@ type SkeletonPropType = {
 type CompRef = string
 
 const Skeleton = forwardRef<CompRef, SkeletonPropType>((props, ref) => {
-  const [currState, updateState] = useStateUpdate(
+  const { currState, updateState } = useStateUpdate(
     props.time || 'no time available',
   )
   console.log('props.time', props.time)

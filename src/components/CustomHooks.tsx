@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react'
-import useLocalStorage from './UseLocalStorage'
+import useLocalStorage from './useLocalStorage'
 import useRandomJoke from './useRandomJoke'
 import Api from '../Api'
 
 const CustomHooks = () => {
   const [name, setName] = useLocalStorage('name', '')
-  const firstNameRef = useRef(null)
-  const lastNameRef = useRef(null)
+  const firstNameRef = useRef<HTMLInputElement>(null as any as HTMLInputElement)
+  const lastNameRef = useRef<HTMLInputElement>(null as any as HTMLInputElement)
   const [firstName, setFirstName] = useState('John')
   const [lastName, setLastName] = useState('Doe')
   const joke = useRandomJoke(firstName, lastName)
@@ -16,7 +16,7 @@ const CustomHooks = () => {
     }
   })
 
-  const generateJoke = (e) => {
+  const generateJoke = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const newApi = new Api()
     const result = newApi.getPosts()
@@ -43,7 +43,7 @@ const CustomHooks = () => {
   )
 }
 
-const useStateUpdate = (inputState, update) => {
+const useStateUpdate = (inputState: string) => {
   const [currState, setCurrState] = useState(inputState)
 
   const updateState = () => {
@@ -55,6 +55,6 @@ const useStateUpdate = (inputState, update) => {
     setCurrState(currTime)
   }
 
-  return [currState, updateState]
+  return { currState, updateState }
 }
 export { CustomHooks, useStateUpdate }

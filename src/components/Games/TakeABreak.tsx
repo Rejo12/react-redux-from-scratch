@@ -37,12 +37,12 @@ export default class TakeABreak extends React.Component {
     slab1.id = 'slab1'
     slab2.id = 'slab2'
     slab3.id = 'slab3'
-    var root = document.getElementById('rootDiv')
+    var root: HTMLElement = document.getElementById('rootDiv') as HTMLElement
     root.appendChild(slab1)
     root.appendChild(slab2)
     root.appendChild(slab3)
   }
-  startTimer(count) {
+  startTimer(count: number) {
     console.log('called', document.getElementById('slab'))
     let slab1 = document.getElementById('slab1')
     if (slab1 !== null) {

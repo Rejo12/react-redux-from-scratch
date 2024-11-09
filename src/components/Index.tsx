@@ -1,13 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { RouteComponentProps } from 'react-router-dom'
 import HamburgerComponent from './HamburgerComponent'
 
-const Index = ({ history }) => {
-  const changeRoute = (route) => {
+const Index = ({ history }: RouteComponentProps) => {
+  const changeRoute = (route: string) => {
     console.log('inside change route', route)
     history.push(route)
   }
-
+  console.log('10', history)
   return (
     <div className="main">
       {/* <HamburgerComponent/> */}

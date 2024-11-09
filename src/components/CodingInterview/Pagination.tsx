@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+type ToDoType = {
+  userId: number
+  id: number
+  title: string
+  completed: boolean
+}
+
 const Pagination = () => {
-  const [todos, setTodos] = useState([])
-  const [noOfTodos, setNoOfTodos] = useState(10)
-  const [currPage, setCurrPage] = useState(1)
+  const [todos, setTodos] = useState<ToDoType[]>([])
+  const [noOfTodos, setNoOfTodos] = useState<number>(10)
+  const [currPage, setCurrPage] = useState<number>(1)
 
   useEffect(() => {
     axios
@@ -31,7 +38,7 @@ const Pagination = () => {
 
   return (
     <>
-      <select onChange={(e) => setNoOfTodos(e.target.value)}>
+      <select onChange={(e) => setNoOfTodos(parseInt(e.target.value))}>
         <option value={10}>{10}</option>
         <option value={20}>{20}</option>
         <option value={50}>{50}</option>
