@@ -18,21 +18,34 @@ const Container = styled.div`
   }
 `
 
-export default class ErrorBoundary extends React.Component {
-  constructor() {
-    super()
-    this.state = { hasError: false, error: null, errorStack: null }
+type PropType = {
+  children: React.ReactNode
+}
+
+type StateType = {
+  hasError: boolean
+  error: string
+  errorStack: string
+}
+
+export default class ErrorBoundary extends React.Component<
+  PropType,
+  StateType
+> {
+  constructor(props: PropType) {
+    super(props)
+    this.state = { hasError: false, error: '', errorStack: '' }
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: unknown) {
     if (error) {
       return { hasError: true, error: error.toString() }
     }
   }
 
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(error: unknown, errorInfo: React.ErrorInfo) {
     if (error) {
-      this.setState({ errorStack: errorInfo.componentStack })
+      this.setState({ errorStack: errorInfo.componentStack as string })
     }
   }
 

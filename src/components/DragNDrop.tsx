@@ -1,24 +1,34 @@
 import React from 'react'
+import { RouteComponentProps } from 'react-router-dom'
 import '../game.css'
 
-export default class DragNDrop extends React.Component {
-  dropEvent(event) {
+type DragNDropProps = RouteComponentProps & {
+  age: number
+  name: string
+  setDataFromDrag: (e: React.DragEvent<HTMLDivElement>) => void
+  toggle: boolean
+}
+
+export default class DragNDrop extends React.Component<DragNDropProps> {
+  dropEvent(event: React.DragEvent<HTMLDivElement>) {
     console.log('here drop')
-    event.preventDefault()
     var data = event.dataTransfer.getData('text')
-    event.target.appendChild(document.getElementById(data))
+    ;(event.target as HTMLDivElement).appendChild(
+      document.getElementById(data) as HTMLElement,
+    )
+    event.preventDefault()
   }
-  dragEvent(event) {
+  dragEvent(event: React.DragEvent<HTMLDivElement>) {
     console.log('here drag')
     this.props.setDataFromDrag(event)
     event.preventDefault()
   }
-  dragStartEvent(event) {
+  dragStartEvent(event: React.DragEvent<HTMLImageElement>) {
     console.log('here drag start')
-    event.dataTransfer.setData('text', event.target.id)
+    event.dataTransfer.setData('text', (event.target as HTMLImageElement).id)
   }
   render() {
-    console.log(this.props.name)
+    console.log('21', this.props)
     return (
       <div>
         <main>
@@ -28,7 +38,7 @@ export default class DragNDrop extends React.Component {
               <div
                 className="box1"
                 onDrop={this.dropEvent.bind(this)}
-                onDragOver={this.dragEvent.bind(this)}
+                onDragOver={(e) => this.dragEvent.bind(this)}
               ></div>
             </React.Fragment>
             <React.Fragment>
