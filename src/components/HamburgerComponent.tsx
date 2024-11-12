@@ -2,12 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Actions from '../Action.js/GameAction'
 
-const HamburgerComponent = (props) => {
+type PropsType = {
+  hamburgerSelected: false
+  handleMenuSelect: () => void
+  selectedMenu: string
+}
+
+const HamburgerComponent = (props: PropsType) => {
   const handleMenuSelect = () => {
     props.handleMenuSelect()
   }
   console.log(window.matchMedia('(max-width:1600px)').matches)
-  console.log(props)
+  console.log('hamburger menu', props)
   return (
     <div
       className={
@@ -31,7 +37,7 @@ const HamburgerComponent = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   console.log(state)
   return {
     hamburgerSelected: state.gameReducer.hamburgerSelected,
@@ -39,7 +45,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: any) => ({
   handleMenuSelect: () => {
     dispatch(Actions.handleMenuSelect())
   },

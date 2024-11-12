@@ -22,7 +22,6 @@ const ImageStyle = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
-  background: ${theme.color.lightGray};
   > img {
     position: absolute;
     top: 0;
@@ -34,8 +33,7 @@ const ImageStyle = styled.div`
 const TextStyle = styled.div`
   height: 1rem;
   margin: 0.5rem 0;
-  width: ${(props) => props.width}%;
-  background: ${theme.color.lightGray};
+  width: ${(props: { width: number }) => props.width}%;
 `
 
 const Categories = styled.div`
@@ -48,8 +46,7 @@ const Categories = styled.div`
 const Category = styled.div`
   height: 40px;
   margin: 0.5rem;
-  width: ${(props) => props.width}px;
-  background: ${theme.color.lightGray};
+  width: ${(props: { width: number }) => props.width}px;
   border-radius: 20px;
   flex-grow: 0;
 `

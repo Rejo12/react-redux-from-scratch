@@ -1,7 +1,12 @@
 import React from 'react'
 import { useEffect } from 'react'
 
-const ChildViewer = ({ clHeight, clWidth, imgUrl }) => {
+type ChildViewerProps = {
+  clHeight: string
+  clWidth: string
+  imgUrl: string
+}
+const ChildViewer = ({ clHeight, clWidth, imgUrl }: ChildViewerProps) => {
   return (
     <>
       <div style={{ height: clHeight, width: clWidth, background: 'red' }}>

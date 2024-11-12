@@ -44,7 +44,14 @@ import CardView from './components/Starship/CardView'
 import TicTacToe from './components/Games/TicTacToe'
 import Pagination from './components/CodingInterview/Pagination'
 
-export const ThemeContext = createContext()
+type ThemeContextType = {
+  currentTheme: string
+  setCurrentTheme: React.Dispatch<React.SetStateAction<string>>
+}
+
+export const ThemeContext = createContext<ThemeContextType>(
+  null as any as ThemeContextType,
+)
 const RouteComponent = () => {
   const [currentTheme, setCurrentTheme] = useState('light')
 

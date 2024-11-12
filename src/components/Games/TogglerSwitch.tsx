@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 const App = () => {
-  const [active, setActive] = useState(false)
-  const [position, setPosition] = useState('8px')
+  const [active, setActive] = useState<boolean>(false)
+  const [position, setPosition] = useState<string>('8px')
 
   const handleClick = () => {
     console.log('clicked')
