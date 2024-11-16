@@ -1,12 +1,20 @@
-import ModeEditOutlineSharpIcon from '@mui/icons-material/ModeEditOutlineSharp'
 import React from 'react'
+import ModeEditOutlineSharpIcon from '@mui/icons-material/ModeEditOutlineSharp'
+import type { GridRenderCellParams, GridColDef } from '@mui/x-data-grid'
 
-const handleEditAction = (rowSelected) => {
+type PostType = {
+  body: string
+  id: number
+  title: string
+  userId: number
+}
+
+const handleEditAction = (rowSelected: PostType) => {
   console.log({ rowSelected })
   // TODO: change the route by appending row id in url
 }
 
-const columns = [
+const columns: GridColDef[] = [
   {
     field: 'id',
     headerName: 'Id',
@@ -21,7 +29,7 @@ const columns = [
     field: 'userId',
     headerName: 'Action',
     width: 100,
-    renderCell: (params) => {
+    renderCell: (params: GridRenderCellParams<any, Date>) => {
       console.log({ params })
       return (
         <ModeEditOutlineSharpIcon
@@ -30,15 +38,15 @@ const columns = [
         />
       )
     },
-    valueGetter: (value) => {
-      // console.log({value})
-    },
   },
+  // valueGetter: (value) => {
+  //   // console.log({value})
+  // },
 ]
 
 export default columns
 
-export const rowFormatter = (row) => {
+export const rowFormatter = (row: PostType) => {
   // if(row.userId){
   //     row.userId = []
   //     row.userId.push(

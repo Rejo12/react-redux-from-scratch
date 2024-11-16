@@ -2,7 +2,16 @@ import React from 'react'
 import { Multiselect } from 'multiselect-react-dropdown'
 // import {hot} from "react-hot-loader";
 
-export default class App extends React.Component {
+type StateType = {
+  initialValue: number
+  options: {
+    name: string
+    id: number
+    age: number
+  }[]
+}
+
+export default class App extends React.Component<{}, StateType> {
   state = {
     initialValue: 1,
     options: [
@@ -15,7 +24,7 @@ export default class App extends React.Component {
   componentDidMount() {
     var _this = this
     var count = 0
-    var timerId = setInterval(() => {
+    var timerId: NodeJS.Timeout = setInterval(() => {
       count++
       if (count == 4) {
         clearInterval(timerId)
@@ -24,7 +33,7 @@ export default class App extends React.Component {
     }, 100000000)
     console.log(timerId)
   }
-  callIncrement(timerId) {
+  callIncrement(timerId: NodeJS.Timeout) {
     console.log('152')
     this.setState((prevState) => ({
       initialValue: prevState.initialValue + 1,
@@ -52,7 +61,7 @@ export default class App extends React.Component {
           </div>
           This is a starter react project with updates {this.state.initialValue}
           ...
-          <button type="primary" onClick={this.callIncrement.bind(this)}>
+          <button onClick={(e) => this.callIncrement.bind(this)}>
             Click me
           </button>
         </div>

@@ -7,18 +7,26 @@ import DarkModeTwoToneIcon from '@mui/icons-material/DarkModeTwoTone'
 import Actions from '../Action.js/GameAction'
 import { ThemeContext } from '../RouteComponent'
 
-const AppLayout = (props) => {
-  const [mode, setMode] = useState('dark-mode')
+type PropType = {
+  hamburgerClicked: (selectionValue: boolean) => void
+}
+
+const AppLayout = (props: PropType) => {
+  const [mode, setMode] = useState<string>('dark-mode')
   const { currentTheme, setCurrentTheme } = useContext(ThemeContext)
 
   const handleHamBurgerClicked = () => {
     props.hamburgerClicked(true)
   }
 
-  const handleThemeChange = (e, newValue) => {
-    setMode(newValue)
-    setCurrentTheme(newValue.split('-')[0])
-    console.log({ newValue })
+  const handleThemeChange = (
+    e: React.MouseEvent<HTMLElement, MouseEvent>,
+    newValue: string,
+  ) => {
+    if (newValue) {
+      setMode(newValue)
+      setCurrentTheme(newValue.split('-')[0])
+    }
   }
 
   return (
@@ -56,8 +64,8 @@ const AppLayout = (props) => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  hamburgerClicked: (selectionValue) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  hamburgerClicked: (selectionValue: boolean) => {
     dispatch(Actions.hamburgerClicked(selectionValue))
   },
 })

@@ -1,12 +1,30 @@
 import React from 'react'
 import Form from './Form'
 
-const ButtonHOC = (InputComponent, inputData) => {
-  return class MyHOC extends React.Component {
+type StateType = {
+  data: number
+}
+
+type PropType = {
+  handleClick: () => void
+  dataToDisp: number
+}
+
+type ContextType = {
+  data: number
+  getData: (data: number) => void
+  setData: (data: number) => void
+}
+
+const ButtonHOC = (
+  InputComponent: React.ComponentType<PropType>,
+  inputData: number,
+) => {
+  return class MyHOC extends React.Component<{}, StateType> {
     state = {
       data: inputData != undefined ? inputData : 0,
     }
-    updateCount = (context) => {
+    updateCount = (context: ContextType) => {
       console.log('context', context)
       context.getData(this.state.data)
       context.setData(this.state.data)
@@ -21,7 +39,7 @@ const ButtonHOC = (InputComponent, inputData) => {
           {(context) => (
             <InputComponent
               dataToDisp={this.state.data}
-              handleClick={(e) => this.updateCount(context)}
+              handleClick={() => this.updateCount(context)}
             />
           )}
         </Form.Consumer>
