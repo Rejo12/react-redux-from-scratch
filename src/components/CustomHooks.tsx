@@ -4,7 +4,7 @@ import useRandomJoke from './useRandomJoke'
 import Api from '../Api'
 
 const CustomHooks = () => {
-  const [name, setName] = useLocalStorage('name', '')
+  const { value: name, setValue: setName } = useLocalStorage('name', '')
   const firstNameRef = useRef<HTMLInputElement>(null as any as HTMLInputElement)
   const lastNameRef = useRef<HTMLInputElement>(null as any as HTMLInputElement)
   const [firstName, setFirstName] = useState('John')

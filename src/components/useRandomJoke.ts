@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const useRandomJoke = (firstName, lastName) => {
+const useRandomJoke = (firstName:string, lastName:string) => {
   const [joke, setJoke] = useState('')
 
   useEffect(() => {
