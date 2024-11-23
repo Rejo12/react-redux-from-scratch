@@ -1,12 +1,12 @@
 import React, { lazy, Suspense, createContext } from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import rootSaga from './Saga/rootSaga'
 import createSagaMiddleware from 'redux-saga'
-import rootReducer from '../src/reducer'
+import rootReducer from './reducer'
 import RouteComponent from './RouteComponent'
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))

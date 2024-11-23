@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 
-export default function useDebounce(callBack, delay, dependency) {
+export default function useDebounce(callBack:()=>void, delay:number, dependency:string) {
   console.log(callBack, delay, dependency)
-  let timerId
+  let timerId:NodeJS.Timeout
   // useEffect(()=>{
   //     console.log("timerId",timerId)
   //     if(timerId){
@@ -26,7 +26,7 @@ export default function useDebounce(callBack, delay, dependency) {
       clearTimeout(timerId)
     }
     timerId = setTimeout(() => {
-      timerId = null
+      timerId = null as any as NodeJS.Timeout
       callBack()
     }, 3000)
   }
