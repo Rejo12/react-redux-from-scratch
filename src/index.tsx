@@ -1,13 +1,15 @@
 import React, { lazy, Suspense, createContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, compose, CombinedState } from 'redux'
 import thunk from 'redux-thunk'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import rootSaga from './Saga/rootSaga'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from './reducer'
 import RouteComponent from './RouteComponent'
+import { initialGameStateType } from './reducer/GameReducer'
+import { InterviewStateType } from './reducer/InterviewReducer'
 
 // const CustomHooks = lazy(()=>import('./components/CustomHooks'))
 // const DragNDrop = lazy(()=>import('./components/GamesContainer'))
@@ -23,7 +25,7 @@ const store = createStore(
   compose(applyMiddleware(sagaMiddleware, thunk)),
 )
 sagaMiddleware.run(rootSaga)
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById('root')!
 const root = ReactDOM.createRoot(rootElement)
 console.log('-----------index.js-----------------')
 root.render(

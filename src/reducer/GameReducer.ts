@@ -1,6 +1,6 @@
 
 
-type initialStateType={
+export interface initialGameStateType{
   name:string,
   age:number,
   toggle:boolean,
@@ -8,7 +8,7 @@ type initialStateType={
   selectedMenu:string
 }
 
-type actionType={
+export type actionType={
   type: 'SET_DATA_FROM_DRAG',
   data:React.DragEvent<HTMLDivElement>
 }|
@@ -20,7 +20,7 @@ type actionType={
   type: 'SET_MENU_SELECTED',
 }
 
-const initialState:initialStateType = {
+const initialState:initialGameStateType = {
   name: 'Rejo',
   age: 26,
   toggle: false,
@@ -28,7 +28,7 @@ const initialState:initialStateType = {
   selectedMenu: null as any as string,
 }
 
-export default function reducer(state = initialState, action:actionType) {
+export default function reducer(state = initialState, action:actionType):initialGameStateType {
   switch (action.type) {
     case 'SET_DATA_FROM_DRAG':
       console.log('reducer', action.data)

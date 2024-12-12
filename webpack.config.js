@@ -3,7 +3,7 @@ const webpack = require("webpack");
 require("regenerator-runtime");
 
 module.exports = {
-  entry: ["regenerator-runtime", "./src/index.js"],
+  entry: ["regenerator-runtime", "./src/index.tsx"],
   mode: "development",
   watch: true,
   watchOptions: {

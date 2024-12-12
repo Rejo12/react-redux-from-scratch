@@ -7,6 +7,8 @@ import { fetchPosts } from '../../Action.js/InterviewAction'
 import ModeEditOutlineSharpIcon from '@mui/icons-material/ModeEditOutlineSharp'
 import columns, { rowFormatter } from './column'
 import { ThemeContext } from '../../RouteComponent'
+import { RootState } from '../../reducer'
+import { ThunkDispatch } from 'redux-thunk'
 
 // const columns = [
 //     { field: 'id', headerName: 'ID', width: 70 },
@@ -79,11 +81,16 @@ const List = (props: ListProps) => {
   )
 }
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: RootState) => ({
   posts: state.interviewReducer.posts,
 })
 
-const mapDispatchToProps = (dispatch: any) => ({
+type ListCompActionType = {
+  type: string
+}
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<any, never, ListCompActionType>,
+) => ({
   fetchPosts: () => {
     dispatch(fetchPosts())
   },

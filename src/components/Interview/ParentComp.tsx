@@ -4,6 +4,8 @@ import Child1 from './Child1'
 import Child2 from './Child2'
 import fetchInterviewData from '../../Action.js/InterviewAction'
 import { useProps } from '@mui/x-data-grid/internals'
+import { RootState } from '../../reducer'
+import { ThunkDispatch } from 'redux-thunk'
 
 type userProp = {
   id: number
@@ -80,11 +82,17 @@ class ParentComp extends React.Component<ParentCompProps, ParentCompState> {
   }
 }
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: RootState) => ({
   interviewData: state.interviewReducer.fetchedData,
 })
 
-const mapDispatchToProps = (dispatch: any) => {
+type ParentCompActionType = {
+  type: string
+}
+
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<any, never, ParentCompActionType>,
+) => {
   return {
     fetchInterviewData: () => {
       dispatch(fetchInterviewData())

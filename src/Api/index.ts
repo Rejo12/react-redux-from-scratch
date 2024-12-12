@@ -57,7 +57,7 @@ class Api {
     return this.apiInterface.delete('/posts/1')
   }
 
-  getPostById = (id:number) => {
+  getPostById = (id:string) => {
     return this.apiInterface.get(`/posts/${id}`)
   }
 }

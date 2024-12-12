@@ -6,6 +6,7 @@ import LightModeTwoToneIcon from '@mui/icons-material/LightModeTwoTone'
 import DarkModeTwoToneIcon from '@mui/icons-material/DarkModeTwoTone'
 import Actions from '../Action.js/GameAction'
 import { ThemeContext } from '../RouteComponent'
+import { ThunkDispatch } from 'redux-thunk'
 
 type PropType = {
   hamburgerClicked: (selectionValue: boolean) => void
@@ -64,7 +65,22 @@ const AppLayout = (props: PropType) => {
   )
 }
 
-const mapDispatchToProps = (dispatch: any) => ({
+type actionType =
+  | {
+      type: 'SET_DATA_FROM_DRAG'
+      data: React.DragEvent<HTMLDivElement>
+    }
+  | {
+      type: 'SET_HAMBURGER_VALUE'
+      payload: boolean
+    }
+  | {
+      type: 'SET_MENU_SELECTED'
+    }
+
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<any, never, actionType>,
+) => ({
   hamburgerClicked: (selectionValue: boolean) => {
     dispatch(Actions.hamburgerClicked(selectionValue))
   },

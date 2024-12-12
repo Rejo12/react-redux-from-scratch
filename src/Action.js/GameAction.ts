@@ -6,7 +6,7 @@ type actionType={
 }|
 {
   type: 'SET_HAMBURGER_VALUE',
-  payload:string
+  payload:boolean
 }|
 {
   type: 'SET_MENU_SELECTED',
@@ -24,7 +24,7 @@ const Actions = {
     }
   },
 
-  hamburgerClicked: (selectionValue:string) => {
+  hamburgerClicked: (selectionValue:boolean) => {
     return (dispatch:ThunkDispatch<any,never,actionType>) => {
       dispatch({
         type: 'SET_HAMBURGER_VALUE',

@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Actions from '../Action.js/GameAction'
+import { RootState } from '../reducer'
+import { ThunkDispatch } from 'redux-thunk'
 
 type PropsType = {
-  hamburgerSelected: false
+  hamburgerSelected: boolean | string
   handleMenuSelect: () => void
   selectedMenu: string
 }
@@ -37,7 +39,7 @@ const HamburgerComponent = (props: PropsType) => {
   )
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: RootState) => {
   console.log(state)
   return {
     hamburgerSelected: state.gameReducer.hamburgerSelected,
@@ -45,7 +47,13 @@ const mapStateToProps = (state: any) => {
   }
 }
 
-const mapDispatchToProps = (dispatch: any) => ({
+type actionType = {
+  type: 'SET_MENU_SELECTED'
+}
+
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<any, never, actionType>,
+) => ({
   handleMenuSelect: () => {
     dispatch(Actions.handleMenuSelect())
   },

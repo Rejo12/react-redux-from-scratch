@@ -7,12 +7,13 @@ import {
   clearSelectedPost,
 } from '../../Action.js/InterviewAction'
 import { createNewState } from '../../Reusable/hooks'
+import { RootState } from '../../reducer'
 
 type SelectedPostType = {
-  body: string
-  id: number
-  title: string
-  userId: number
+  body?: string
+  id?: number
+  title?: string
+  userId?: number
 }
 
 type DetailsPropType = RouteComponentProps & {
@@ -58,8 +59,9 @@ const Details = (props: DetailsPropType) => {
         : 'text-box error'
       : 'text-box-default',
   )
+  const { selectedPost } = props
   return (
-    <>
+    <div>
       <h2>{params.postId}</h2>
       <hr />
       <div className="form">
@@ -74,7 +76,9 @@ const Details = (props: DetailsPropType) => {
                   : 'text-box'
                 : 'text-box'
             }
-            value={newState.title || ''}
+            value={
+              Object.keys(selectedPost).length > 0 ? selectedPost.title : ''
+            }
             onChange={(e) => handleChange('title', e)}
           ></input>
         </div>
@@ -89,23 +93,21 @@ const Details = (props: DetailsPropType) => {
                   : 'text-box'
                 : 'text-box'
             }
-            value={newState.body || ''}
+            value={selectedPost ? selectedPost.body : ''}
             onChange={(e) => handleChange('body', e)}
           ></input>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
 // const ma
 
 export default connect(
-  (state: any) => {
-    return {
-      selectedPost: state.interviewReducer.selectedPost,
-    }
-  },
+  (state: RootState) => ({
+    selectedPost: state.interviewReducer.selectedPost,
+  }),
   {
     fetchPostById,
     clearSelectedPost,
