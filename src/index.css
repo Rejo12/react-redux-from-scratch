@@ -7,10 +7,10 @@
   /* overflow-y: scroll; */
 }
 
-/* .hoverClass:hover{
-    color: #ffca07fc !important;
+.link-element :hover, span .link-element :hover{
+    color: black !important;
     cursor: pointer;
-} */
+}
 #customToolTip:hover .descriptionText {
   border: 2px solid red !important;
   visibility: visible;

@@ -20,8 +20,8 @@ const Index = ({ history }: RouteComponentProps) => {
           <p>Click on below link to navigate to particular page:</p>
           <ul className="containerUL">
             <span
-              id="customToolTip"
-              className="hoverClass"
+              // id="customToolTip"
+              className="link-element"
               onClick={(e) => changeRoute('/dragndrop')}
             >
               {' '}
@@ -32,104 +32,56 @@ const Index = ({ history }: RouteComponentProps) => {
             <br />
             <br />
 
-            <li>
-              <a className="hoverClass" onClick={(e) => changeRoute('/game')}>
-                {' '}
-                GameComp{' '}
-              </a>
+            <li className="link-element">
+              <a onClick={(e) => changeRoute('/game')}> GameComp </a>
             </li>
-            <li>
-              <a className="hoverClass" onClick={(e) => changeRoute('/wrap')}>
-                {' '}
-                WrapperComponent{' '}
-              </a>
+            <li className="link-element">
+              <a onClick={(e) => changeRoute('/wrap')}> WrapperComponent </a>
             </li>
-            <li>
-              <a className="hoverClass" onClick={(e) => changeRoute('/hooks')}>
-                {' '}
-                CustomHooks{' '}
-              </a>
+            <li className="link-element">
+              <a onClick={(e) => changeRoute('/hooks')}> CustomHooks </a>
             </li>
             <li>
               React hooks
               <ul>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useState')}
-                  >
-                    {' '}
-                    UseState{' '}
-                  </a>
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useState')}> UseState </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useReducer')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useReducer')}>
                     {' '}
                     UseReducer{' '}
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useEffect')}
-                  >
-                    {' '}
-                    UseEffect{' '}
-                  </a>
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useEffect')}> UseEffect </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useRef')}
-                  >
-                    {' '}
-                    UseRef{' '}
-                  </a>
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useRef')}> UseRef </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useLayoutEffect')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useLayoutEffect')}>
                     {' '}
                     UseLayoutEffect{' '}
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useImperativeHandle')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useImperativeHandle')}>
                     {' '}
                     UseImperativeHandle{' '}
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useContext')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useContext')}>
                     {' '}
                     UseContext{' '}
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useMemo')}
-                  >
-                    {' '}
-                    UseMemo{' '}
-                  </a>
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useMemo')}> UseMemo </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/useCallBack')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/useCallBack')}>
                     {' '}
                     UseCallBack{' '}
                   </a>
@@ -137,187 +89,108 @@ const Index = ({ history }: RouteComponentProps) => {
               </ul>
             </li>
 
-            <li>
-              <a className="hoverClass" onClick={(e) => changeRoute('/styled')}>
-                {' '}
-                Styled Component{' '}
-              </a>
+            <li className="link-element">
+              <a onClick={(e) => changeRoute('/styled')}> Styled Component </a>
             </li>
-            <li>
-              <a
-                className="hoverClass"
-                onClick={(e) => changeRoute('/counter')}
-              >
-                Counter
-              </a>
+            <li className="link-element">
+              <a onClick={(e) => changeRoute('/counter')}>Counter</a>
             </li>
-            <li>
-              <a
-                className="hoverClass"
-                onClick={(e) => changeRoute('/react-memo')}
-              >
-                React memo
-              </a>
+            <li className="link-element">
+              <a onClick={(e) => changeRoute('/react-memo')}>React memo</a>
             </li>
             <li>
               Interview
               <ul>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/interview-xc')}
-                  >
-                    XC
-                  </a>
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/interview-xc')}>XC</a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/interview-inventiv')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/interview-inventiv')}>
                     Inventiv-5/4/22
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/interview-dragNdrop')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/interview-dragNdrop')}>
                     dragNdrop
                   </a>
                 </li>
               </ul>
               <ul>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/hoc-study')}
-                  >
-                    HOC
-                  </a>
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/hoc-study')}>HOC</a>
                 </li>
               </ul>
               <ul>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/render-props')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/render-props')}>
                     Render Props
                   </a>
                 </li>
               </ul>
               <ul>
-                <li>
-                  <a
-                    className="hoverClass"
-                    onClick={(e) => changeRoute('/binary-tree')}
-                  >
+                <li className="link-element">
+                  <a onClick={(e) => changeRoute('/binary-tree')}>
                     Binary Tree
                   </a>
                 </li>
               </ul>
             </li>
           </ul>
-          <li>
-            <a className="hoverClass" onClick={(e) => changeRoute('/axios')}>
-              Axios
-            </a>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/axios')}>Axios</a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/coding-interview')}
-            >
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/coding-interview')}>
               Coding interview of click
             </a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/tree-structure')}
-            >
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/tree-structure')}>
               Coding interview of displaying tree structure
             </a>
           </li>
-          <li>
-            <a className="hoverClass" onClick={(e) => changeRoute('/synonym')}>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/synonym')}>
               Coding interview for finding synonym word
             </a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/permission')}
-            >
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/permission')}>
               Coding interview for read,write,delete
             </a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/starship-list')}
-            >
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/starship-list')}>
               Coding interview to display starship
             </a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/rating-component')}
-            >
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/rating-component')}>
               Rating Component
             </a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/useLocalStorage')}
-            >
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/useLocalStorage')}>
               useLocalStorage
             </a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/useDebounce')}
-            >
-              useDebounce
-            </a>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/useDebounce')}>useDebounce</a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/useHistory')}
-            >
-              useHistory
-            </a>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/useHistory')}>useHistory</a>
           </li>
-          <li>
-            <a className="hoverClass" onClick={(e) => changeRoute('/listView')}>
-              List View
-            </a>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/listView')}>List View</a>
           </li>
-          <li>
-            <a className="hoverClass" onClick={(e) => changeRoute('/carousel')}>
-              Carousel View
-            </a>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/carousel')}>Carousel View</a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/ticTacToe')}
-            >
-              Tic Tac Toe
-            </a>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/ticTacToe')}>Tic Tac Toe</a>
           </li>
-          <li>
-            <a
-              className="hoverClass"
-              onClick={(e) => changeRoute('/pagination')}
-            >
-              Pagination
-            </a>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/pagination')}>Pagination</a>
           </li>
         </section>
       </div>
