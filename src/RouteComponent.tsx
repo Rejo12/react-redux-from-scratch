@@ -43,6 +43,7 @@ import StarshipList from './components/Starship/StarshipList'
 import CardView from './components/Starship/CardView'
 import TicTacToe from './components/Games/TicTacToe'
 import Pagination from './components/CodingInterview/Pagination'
+import MemoryGame from './components/MemoryGame/index'
 
 type ThemeContextType = {
   currentTheme: string
@@ -110,6 +111,7 @@ const RouteComponent = () => {
               <Route path="/carousel" component={Carousel} />
               <Route path="/ticTacToe" component={TicTacToe} />
               <Route path="/pagination" component={Pagination} />
+              <Route path="/memory-game" component={MemoryGame} />
               {/* </Suspense> */}
             </Switch>
           </div>

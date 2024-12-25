@@ -192,6 +192,9 @@ const Index = ({ history }: RouteComponentProps) => {
           <li className="link-element">
             <a onClick={(e) => changeRoute('/pagination')}>Pagination</a>
           </li>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/memory-game')}>Memory game</a>
+          </li>
         </section>
       </div>
     </div>
