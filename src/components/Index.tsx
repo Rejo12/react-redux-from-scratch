@@ -195,6 +195,11 @@ const Index = ({ history }: RouteComponentProps) => {
           <li className="link-element">
             <a onClick={(e) => changeRoute('/memory-game')}>Memory game</a>
           </li>
+          <li className="hacker-news">
+            <a onClick={(e) => changeRoute('/hacker-news')}>
+              Hacker News - Top 10 Articles
+            </a>
+          </li>
         </section>
       </div>
     </div>
