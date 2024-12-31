@@ -46,6 +46,7 @@ import Pagination from './components/CodingInterview/Pagination'
 import MemoryGame from './components/MemoryGame/index'
 import HackerNews from './components/HackerNews'
 import Timer from './components/Timer'
+import LocalStorage from './components/LocalStorage'
 
 type ThemeContextType = {
   currentTheme: string
@@ -116,6 +117,7 @@ const RouteComponent = () => {
               <Route path="/memory-game" component={MemoryGame} />
               <Route path="/hacker-news" component={HackerNews} />
               <Route path="/timer" component={Timer} />
+              <Route path="/local-storage" component={LocalStorage} />
               {/* </Suspense> */}
             </Switch>
           </div>

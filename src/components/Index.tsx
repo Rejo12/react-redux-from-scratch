@@ -205,6 +205,11 @@ const Index = ({ history }: RouteComponentProps) => {
               Timer - Start, Stop, Reset
             </a>
           </li>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/local-storage')}>
+              Add persistence to local storage
+            </a>
+          </li>
         </section>
       </div>
     </div>
