@@ -533,3 +533,16 @@ p[class='rating-paragraph']+.rating-value {
 .activePage{
   font-size: larger;
 }
+
+.add-contact-layout{
+  height: 153px;
+  border:1px solid
+}
+
+.add-contact-layout > div{
+  margin: 20px 0 5px 20px;
+}
+
+.add-contact-layout > form{
+  margin: 50px 0 5px 20px;
+}

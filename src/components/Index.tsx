@@ -210,6 +210,9 @@ const Index = ({ history }: RouteComponentProps) => {
               Add persistence to local storage
             </a>
           </li>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/contact-book')}>Contact book</a>
+          </li>
         </section>
       </div>
     </div>
