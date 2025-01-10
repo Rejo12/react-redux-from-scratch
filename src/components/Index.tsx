@@ -213,6 +213,9 @@ const Index = ({ history }: RouteComponentProps) => {
           <li className="link-element">
             <a onClick={(e) => changeRoute('/contact-book')}>Contact book</a>
           </li>
+          <li className="link-element">
+            <a onClick={(e) => changeRoute('/typewriter')}>Typewriter</a>
+          </li>
         </section>
       </div>
     </div>

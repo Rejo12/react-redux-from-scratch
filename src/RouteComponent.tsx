@@ -48,6 +48,7 @@ import HackerNews from './components/HackerNews'
 import Timer from './components/Timer'
 import LocalStorage from './components/LocalStorage'
 import ContactBook from './components/ContactBook'
+import Typewriter from './components/Typewriter'
 
 type ThemeContextType = {
   currentTheme: string
@@ -120,6 +121,7 @@ const RouteComponent = () => {
               <Route path="/timer" component={Timer} />
               <Route path="/local-storage" component={LocalStorage} />
               <Route path="/contact-book" component={ContactBook} />
+              <Route path="/typewriter" component={Typewriter} />
               {/* </Suspense> */}
             </Switch>
           </div>
